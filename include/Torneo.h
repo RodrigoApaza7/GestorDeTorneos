@@ -1,6 +1,7 @@
 #ifndef TORNEO_H
 #define TORNEO_H
 
+#include <iostream>
 #include <string>
 using namespace std;
 
@@ -12,6 +13,9 @@ private:
     std::string fecha;
 
 public:
+    Torneo();
+    void setfecha(const std::string& fecha);
+    string getfecha();
     void registrar();
     void mostrar();
 };
