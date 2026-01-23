@@ -1,23 +1,19 @@
-#ifndef CITA_MEDICA_H
-#define CITA_MEDICA_H
+#ifndef TORNEO_H
+#define TORNEO_H
 
 #include <string>
 using namespace std;
 
-class CitaMedica {
+class Torneo {
 private:
     int id;
-    int idPaciente;
-    int idDoctor;
-    string fecha;
-    string hora;
+    std::string nombreTorneo;
+    std::string juego; // LOL, CS2, Dota, Valorant
+    std::string fecha;
 
 public:
-    CitaMedica();
-    void SetIdPaciente(int idPaciente);
-    void SetIdDoctor(int idDoctor);
     void registrar();
     void mostrar();
 };
 
-#endif // CITA_MEDICA_H
+#endif // TORNEO_H
