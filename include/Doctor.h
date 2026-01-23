@@ -13,6 +13,8 @@ private:
 
 public:
     Doctor();
+    void SetEspecialidad(string especialidad);
+    void SetTelefono(string telefono);
     void registrar();
     void mostrar();
 };
