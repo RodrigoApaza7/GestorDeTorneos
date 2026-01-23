@@ -14,8 +14,16 @@ private:
 
 public:
     Torneo();
+    
     void setfecha(const std::string& fecha);
+    void setnombreTorneo(const std::string& nombreTorneo);
+    void setjuego(const std::string& juego);
+
+    string getid();
+    string getnombreTorneo();
+    string getjuego();
     string getfecha();
+
     void registrar();
     void mostrar();
 };
