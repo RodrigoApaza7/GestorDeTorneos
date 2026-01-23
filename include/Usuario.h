@@ -10,6 +10,8 @@ private:
     string rol;
 
 public:
+    Usuario();
+    void Registrar();
     bool login(string u, string p);
 };
 
