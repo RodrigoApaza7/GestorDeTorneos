@@ -12,6 +12,7 @@ private:
     int edad;
 
 public:
+    Jugador();
     void registrar();
     void mostrar();
 };
