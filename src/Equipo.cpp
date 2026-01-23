@@ -1,4 +1,6 @@
 #include "include/Equipo.h"
+#include "include/Guardar.h"
+
 #include <iostream>
 #include <string>
 using namespace std;
@@ -18,6 +20,9 @@ void Equipo::registrar()
     cout << "Ingrese la cantidad de jugadores del equipo: ";
     cin >> cantidadJugadores;
     cout << "Equipo registrado exitosamente." << endl;
+
+    Guardar g;
+    g.GuardarEquipo(*this);
 }
 
 void Equipo::mostrar() 

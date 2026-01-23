@@ -1,4 +1,6 @@
 #include "include/Partida.h"
+#include "include/Guardar.h"
+
 #include <iostream>
 #include <string>
 using namespace std;
@@ -17,5 +19,15 @@ void Partida::registrar() {
    cout << "ingrese el resultado del segundo equipo: ";
     cin >> resultadoEquipo2;
     cout << "datos registrados exitosamnete " << endl;
+
+    Guardar g;
+    g.GuardarPartida(*this);
 }
  
+void Partida::mostrar() {
+    cout << "ID de la Partida: " << id << endl;
+    cout << "ID del Equipo 1: " << idEquipo1 << endl;
+    cout << "ID del Equipo 2: " << idEquipo2 << endl;
+    cout << "Resultado del Equipo 1: " << resultadoEquipo1 << endl;
+    cout << "Resultado del Equipo 2: " << resultadoEquipo2 << endl;
+}
