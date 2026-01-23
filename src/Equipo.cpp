@@ -60,4 +60,5 @@ void Equipo::mostrar()
     cout << "ID del equipo: " << id << endl;
     cout << "Nombre del equipo: " << nombreEquipo << endl;
     cout << "Cantidad de jugadores: " << cantidadJugadores << endl;
+    
 }
