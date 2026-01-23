@@ -1,4 +1,5 @@
 #include "include/Jugador.h"
+#include "include/Guardar.h"
 #include <iostream>
 #include <string>
 using namespace std;
@@ -22,6 +23,9 @@ void Jugador::registrar()
     cin >> nickname;
     cout << "Ingrese Edad: ";
     cin >> edad;
+
+    Guardar g;
+    g.GuardarJugador(*this);
 }
 
 void Jugador::mostrar() 
