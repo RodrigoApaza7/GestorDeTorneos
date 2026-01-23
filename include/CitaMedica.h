@@ -14,6 +14,8 @@ private:
 
 public:
     CitaMedica();
+    void SetIdPaciente(int idPaciente);
+    void SetIdDoctor(int idDoctor);
     void registrar();
     void mostrar();
 };
