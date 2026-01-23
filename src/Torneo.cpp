@@ -1,4 +1,4 @@
-#include "include/CitaMedica.h"
+#include "include/Torneo.h"
 #include <iostream>
 #include <string>
 using namespace std;
