@@ -7,10 +7,11 @@ using namespace std;
 class Equipo {
 private:
     int id;
-    std::string nombreEquipo;
+    string nombreEquipo;
     int cantidadJugadores;
 
 public:
+    Equipo();
     void registrar();
     void mostrar();
 };

@@ -10,6 +10,7 @@ private:
     int resultadoEquipo2;
 
 public:
+    Partida();
     void registrar();
     void mostrar();
 };
