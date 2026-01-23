@@ -1,15 +1,16 @@
 #ifndef USUARIO_H
 #define USUARIO_H
 #include <string>
+using namespace std;
 
 class Usuario {
 private:
-    std::string username;
-    std::string password;
-    std::string rol;
+    string username;
+    string password;
+    string rol;
 
 public:
-    bool login(std::string u, std::string p);
+    bool login(string u, string p);
 };
 
 #endif // USUARIO_H
