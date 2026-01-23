@@ -15,7 +15,8 @@ private:
 
 public:
     Paciente();
-    
+    void setdireccion(string direccion);
+    void settelefono(string telefono);
     void registrar();
     void mostrar();
 };
