@@ -12,6 +12,36 @@ Equipo::Equipo()
     cantidadJugadores = 0;
 }
 
+// Setters
+
+
+void Equipo::setNombreEquipo(string nombreEquipo) 
+{
+    this->nombreEquipo = nombreEquipo;
+}
+
+void Equipo::setCantidadJugadores(int cantidadJugadores) 
+{
+    this->cantidadJugadores = cantidadJugadores;
+}
+
+// Getters
+int Equipo::getId() 
+{
+    return id;
+}
+
+string Equipo::getNombreEquipo() 
+{
+    return nombreEquipo;
+}
+
+int Equipo::getCantidadJugadores() 
+{
+    return cantidadJugadores;
+}
+
+
 void Equipo::registrar() 
 {
     cout << "Registrando equipo..." << endl;
