@@ -1,5 +1,5 @@
-#ifndef PACIENTE_H
-#define PACIENTE_H
+#ifndef JUGADOR_H
+#define JUGADOR_H
 
 #include <string>
 using namespace std;
@@ -16,4 +16,4 @@ public:
     void mostrar();
 };
 
-#endif // PACIENTE_H
+#endif // JUGADOR_H
