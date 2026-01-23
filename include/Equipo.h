@@ -11,7 +11,20 @@ private:
     int cantidadJugadores;
 
 public:
+    
     Equipo();
+
+    
+    
+    void setNombreEquipo(string nombreEquipo);
+    void setCantidadJugadores(int cantidadJugadores);
+
+    
+    int getId();
+    string getNombreEquipo();
+    int getCantidadJugadores();
+
+    
     void registrar();
     void mostrar();
 };
