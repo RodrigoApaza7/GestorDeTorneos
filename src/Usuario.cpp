@@ -55,4 +55,3 @@ void Usuario::Registrar()
     Guardar g;
     g.GuardarUsuario(*this);
 }
-
