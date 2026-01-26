@@ -81,7 +81,16 @@ void Menu::mostrarMenuUsuario() {
         } 
         else if(opcion == 2) 
         {
-            // Llamar a la funcion de login usuario
+            string u, p;
+            cout << "Ingrese el nombre de usuario: ";
+            cin >> u;
+            cout << "Ingrese la contrasena: ";
+            cin >> p;
+            if(user.login(u, p)) {
+                cout << "Login exitoso!" << endl;
+            } else {
+                cout << "Login fallido. Usuario o contrasena incorrectos." << endl;
+            }
         } 
         else if(opcion == 3) 
         {
