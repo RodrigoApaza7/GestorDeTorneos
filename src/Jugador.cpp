@@ -13,6 +13,14 @@ Jugador::Jugador()
     edad = 0;
 }
 
+int Jugador::getId() const {
+    return id;
+}
+
+string Jugador::getnickname() const {
+    return nickname;
+}
+
 void Jugador::registrar() 
 {
     cout << "Registro de Jugador" << endl;
