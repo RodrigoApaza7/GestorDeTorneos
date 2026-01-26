@@ -1,5 +1,6 @@
 #include "Jugador.h"
 #include "Guardar.h"
+#include "Consultar.h"
 #include <iostream>
 #include <string>
 using namespace std;
