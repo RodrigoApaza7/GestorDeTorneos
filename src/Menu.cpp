@@ -27,6 +27,35 @@ void Menu::mostrarMenuPrincipal() {
     cout << "4. Salir" << endl;
     linea();
     cout << "Seleccione una opcion: ";
+    cin >> opcion;
+
+do
+{
+    if (opcion < 1 || opcion > 4) 
+    {
+        cout << "Opcion no valida. Intente de nuevo.\n";
+        continue; // vuelve al inicio del do-while
+    }
+
+    switch (opcion) {
+        case 1:
+            mostrarMenuUsuario();
+            break;
+        case 2:
+            mostrarMenuJugador();
+            break;
+        case 3:
+            mostrarMenuPartida();
+            break;
+        case 4:
+            cout << "Saliendo del programa..." << endl;
+            break;
+        default:
+            cout << "Opcion no valida. Intente de nuevo." << endl;
+            break;
+    }
+} while (opcion != 4);
+
 }
 
 void Menu::mostrarMenuUsuario() {

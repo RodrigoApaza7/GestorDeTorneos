@@ -8,5 +8,6 @@ int main()
     Menu menu;
     menu.mostrarMenuPrincipal();
 
-    return 1;
+    system("pause");
+    return 0;
 }
