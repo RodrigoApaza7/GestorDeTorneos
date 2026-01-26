@@ -53,7 +53,7 @@ do
         cout << "Opcion no valida. Intente de nuevo." << endl;
     }
 
-} while (opcion >=1 && opcion <=4);
+} while (opcion != 1 && opcion != 2 && opcion != 3 && opcion != 4);
 
 }
 
