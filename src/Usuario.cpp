@@ -46,7 +46,7 @@ void Usuario::Registrar()
     cout << "ingrese los datos: ";
     cout << "Nombre del usuario " << endl;
     cin >> username;
-    cout << " Ingrese la contraseña: ";
+    cout << " Ingrese la contrasenia: ";
     cin >> password;
     cout << "Ingrese el rol ";
     cin >> rol;
