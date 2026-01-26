@@ -1,4 +1,7 @@
 #include "Menu.h"
+#include "Usuario.h"
+#include "Jugador.h"
+#include "Partida.h"
 #include <iostream>
 using namespace std;
 
@@ -67,6 +70,29 @@ void Menu::mostrarMenuUsuario() {
     cout << "3. Volver al Menu Principal" << endl;
     linea();
     cout << "Seleccione una opcion: ";
+    Usuario user;
+    cin >> opcion;
+
+    do
+    {
+        if(opcion == 1) 
+        {
+            user.Registrar();
+        } 
+        else if(opcion == 2) 
+        {
+            // Llamar a la funcion de login usuario
+        } 
+        else if(opcion == 3) 
+        {
+            mostrarMenuPrincipal();
+        }
+        else 
+        {
+            cout << "Opcion no valida. Intente de nuevo." << endl;
+        }
+
+    } while (opcion != 1 && opcion != 2 && opcion != 3);
 }
 
 void Menu::mostrarMenuJugador() {
@@ -79,6 +105,7 @@ void Menu::mostrarMenuJugador() {
     cout << "3. Volver al Menu Principal" << endl;
     linea();
     cout << "Seleccione una opcion: ";
+    cin >> opcion;
 }
 
 void Menu::mostrarMenuPartida() {
@@ -91,4 +118,5 @@ void Menu::mostrarMenuPartida() {
     cout << "3. Volver al Menu Principal" << endl;
     linea();
     cout << "Seleccione una opcion: ";
+    cin >> opcion;
 }
