@@ -9,11 +9,11 @@ void Torneo::setfecha(const std::string& fecha) {
     this->fecha = fecha;
 }
 
-void Torneo::setnombreTorneo(const std::string& nombreTorneo) {
+void Torneo::setnombreTorneo(const string& nombreTorneo) {
     this->nombreTorneo = nombreTorneo;
 }
 
-void Torneo::setjuego(const std::string& juego) {
+void Torneo::setjuego(const string& juego) {
     this->juego = juego;
 }
 
