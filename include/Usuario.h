@@ -11,6 +11,14 @@ private:
 
 public:
     Usuario();
+
+    void setUsername(const string& u);
+    void setPassword(const string& p);
+    void setRol(const string& r);
+    string getUsername() const;
+    string getPassword() const;
+    string getRol() const;
+
     void Registrar();
     bool login(string u, string p);
 };

@@ -11,6 +11,13 @@ private:
 
 public:
     Partida();
+    void setIdEquipo1(int idEq1);
+    void setIdEquipo2(int idEq2);
+    int getIdEquipo1() const;
+    int getIdEquipo2() const;
+    int getResultadoEquipo1() const;
+    int getResultadoEquipo2() const;
+
     void registrar();
     void mostrar();
 };
