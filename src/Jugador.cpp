@@ -8,8 +8,8 @@ using namespace std;
 Jugador::Jugador() 
 {
     id = 0;
-    nombre = "";
-    nickname = "";
+    char nombre[50] = "";
+    char nickname[50] = "";
     edad = 0;
 }
 
@@ -17,7 +17,7 @@ int Jugador::getId() const {
     return id;
 }
 
-string Jugador::getnickname() const {
+const char* Jugador::getnickname() const {
     return nickname;
 }
 
@@ -27,9 +27,10 @@ void Jugador::registrar()
     cout << "Ingrese ID: ";
     cin >> id;
     cout << "Ingrese Nombre: ";
-    cin >> nombre;
+    cin.ignore();
+    cin.getline(nombre, 50);
     cout << "Ingrese Nickname: ";
-    cin >> nickname;
+    cin.getline(nickname, 50);
     cout << "Ingrese Edad: ";
     cin >> edad;
 

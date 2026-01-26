@@ -7,14 +7,14 @@ using namespace std;
 class Jugador {
 private:
     int id;
-    string nombre;
-    string nickname;
+    char nombre[50];
+    char nickname[50];
     int edad;
 
 public:
     Jugador();
-    void setnickname(const std::string& nick);
-    string getnickname() const;
+    void setnickname(const char* nick);
+    const char* getnickname() const;
     int getId() const;
 
     void registrar();
