@@ -32,31 +32,31 @@ void Menu::mostrarMenuPrincipal() {
     cout << "Seleccione una opcion: ";
     cin >> opcion;
 
-do
-{
-    if(opcion == 1) 
+    do
     {
-        mostrarMenuUsuario();
-    } 
-    else if(opcion == 2) 
-    {
-        mostrarMenuJugador();
-    } 
-    else if(opcion == 3) 
-    {
-        mostrarMenuPartida();
-    }
-    else if(opcion == 4) 
-    {
-        cout << "Saliendo del programa..." << endl;
-        break; // salir del bucle
-    }
-    else 
-    {
-        cout << "Opcion no valida. Intente de nuevo." << endl;
-    }
+        if(opcion == 1) 
+        {
+            mostrarMenuUsuario();
+        } 
+        else if(opcion == 2) 
+        {
+            mostrarMenuJugador();
+        } 
+        else if(opcion == 3) 
+        {
+            mostrarMenuPartida();
+        }
+        else if(opcion == 4) 
+        {
+            cout << "Saliendo del programa..." << endl;
+            break; // salir del bucle
+        }
+        else 
+        {
+            cout << "Opcion no valida. Intente de nuevo." << endl;
+        }
 
-} while (opcion != 1 && opcion != 2 && opcion != 3 && opcion != 4);
+    } while (opcion != 1 && opcion != 2 && opcion != 3 && opcion != 4);
 
 }
 
@@ -106,6 +106,29 @@ void Menu::mostrarMenuJugador() {
     linea();
     cout << "Seleccione una opcion: ";
     cin >> opcion;
+
+    Jugador j;
+
+    do
+    {
+        if(opcion == 1) 
+        {
+            j.registrar();
+        } 
+        else if(opcion == 2) 
+        {
+            j.mostrar();
+        } 
+        else if(opcion == 3) 
+        {
+            mostrarMenuPrincipal();
+        }
+        else 
+        {
+            cout << "Opcion no valida. Intente de nuevo." << endl;
+        }
+
+    } while (opcion != 1 && opcion != 2 && opcion != 3);
 }
 
 void Menu::mostrarMenuPartida() {
@@ -119,4 +142,27 @@ void Menu::mostrarMenuPartida() {
     linea();
     cout << "Seleccione una opcion: ";
     cin >> opcion;
+
+    Partida p;
+
+    do
+    {
+        if(opcion == 1) 
+        {
+            p.registrar();
+        } 
+        else if(opcion == 2) 
+        {
+            p.mostrar();
+        } 
+        else if(opcion == 3) 
+        {
+            mostrarMenuPrincipal();
+        }
+        else 
+        {
+            cout << "Opcion no valida. Intente de nuevo." << endl;
+        }
+
+    } while (opcion != 1 && opcion != 2 && opcion != 3);
 }
