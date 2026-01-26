@@ -160,6 +160,7 @@ void Menu::mostrarMenuPartida() {
         if(opcion == 1) 
         {
             p.registrar();
+            
         } 
         else if(opcion == 2) 
         {

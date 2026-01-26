@@ -7,8 +7,8 @@ using namespace std;
 class Jugador {
 private:
     int id;
-    std::string nombre;
-    std::string nickname;
+    string nombre;
+    string nickname;
     int edad;
 
 public:

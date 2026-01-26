@@ -26,6 +26,8 @@ void Jugador::registrar()
 
     Guardar g;
     g.GuardarJugador(*this);
+
+    cout << "Datos registrados exitosamente." << endl;
 }
 
 void Jugador::mostrar() 
