@@ -8,8 +8,8 @@ using namespace std;
 Jugador::Jugador() 
 {
     id = 0;
-    char nombre[50] = "";
-    char nickname[50] = "";
+    nombre[0] = '\0';
+    nickname[0] = '\0';
     edad = 0;
 }
 
