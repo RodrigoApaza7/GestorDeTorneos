@@ -1,5 +1,5 @@
-#include "include/Partida.h"
-#include "include/Guardar.h"
+#include "Partida.h"
+#include "Guardar.h"
 
 #include <iostream>
 #include <string>

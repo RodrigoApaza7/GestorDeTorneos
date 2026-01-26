@@ -1,5 +1,5 @@
-#include "include/Equipo.h"
-#include "include/Guardar.h"
+#include "Equipo.h"
+#include "Guardar.h"
 
 #include <iostream>
 #include <string>

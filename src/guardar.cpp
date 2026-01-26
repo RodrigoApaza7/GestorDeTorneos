@@ -1,4 +1,4 @@
-#include "../include/Guardar.h"
+#include "Guardar.h"
 #include <stdio.h>
 
 void Guardar::GuardarJugador(Jugador j) {

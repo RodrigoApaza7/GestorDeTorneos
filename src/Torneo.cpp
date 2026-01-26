@@ -1,4 +1,4 @@
-#include "include/Torneo.h"
+#include "Torneo.h"
 #include <iostream>
 #include <string>
 using namespace std;
