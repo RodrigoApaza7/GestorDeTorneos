@@ -55,7 +55,7 @@ do
         break; // salir del bucle
     }
     
-} while (opcion != 1 && opcion != 2 && opcion != 3 && opcion != 4);
+} while (opcion == 1 && opcion == 2 && opcion == 3 && opcion == 4);
 
 }
 
