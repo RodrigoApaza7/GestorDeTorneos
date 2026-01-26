@@ -104,7 +104,8 @@ void Menu::mostrarMenuUsuario() {
     } while (opcion != 1 && opcion != 2 && opcion != 3);
 }
 
-void Menu::mostrarMenuJugador() {
+void Menu::mostrarMenuJugador() 
+{
     limpiarPanalla();
     linea();
     cout << "           MENU JUGADOR          " << endl;
