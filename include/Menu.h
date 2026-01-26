@@ -7,6 +7,7 @@ private:
     void linea();
     void limpiarPanalla();
 public:
+    Menu();
     void mostrarMenuPrincipal();
     void mostrarMenuUsuario();
     void mostrarMenuJugador();
