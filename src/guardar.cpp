@@ -25,3 +25,11 @@ void Guardar::GuardarPartida(Partida p) {
     fwrite(&p, sizeof(Partida), 1, archivo); // guardar objeto
     fclose(archivo); // cerrar archivo
 }
+
+void Guardar::GuardarUsuario(Usuario u) {
+    FILE* archivo;
+    archivo = fopen("usuarios.bin", "a"); // abrir archivo
+
+    fwrite(&u, sizeof(Usuario), 1, archivo); // guardar objeto
+    fclose(archivo); // cerrar archivo
+}

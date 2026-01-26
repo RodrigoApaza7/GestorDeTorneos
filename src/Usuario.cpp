@@ -1,4 +1,5 @@
 #include "Usuario.h"
+#include "Guardar.h"
 #include <iostream>
 #include <string>
 using namespace std;
@@ -50,5 +51,8 @@ void Usuario::Registrar()
     cin >> password;
     cout << "Ingrese el rol ";
     cin >> rol;
+
+    Guardar g;
+    g.GuardarUsuario(*this);
 }
 
