@@ -31,12 +31,6 @@ void Menu::mostrarMenuPrincipal() {
 
 do
 {
-    if (opcion < 1 || opcion > 4) 
-    {
-        cout << "Opcion no valida. Intente de nuevo.\n";
-        continue; // vuelve al inicio del do-while
-    }
-
     if(opcion == 1) 
     {
         mostrarMenuUsuario();
@@ -54,8 +48,12 @@ do
         cout << "Saliendo del programa..." << endl;
         break; // salir del bucle
     }
-    
-} while (opcion == 1 && opcion == 2 && opcion == 3 && opcion == 4);
+    else 
+    {
+        cout << "Opcion no valida. Intente de nuevo." << endl;
+    }
+
+} while (opcion >=1 && opcion <=4);
 
 }
 
