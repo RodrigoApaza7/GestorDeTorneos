@@ -37,24 +37,25 @@ do
         continue; // vuelve al inicio del do-while
     }
 
-    switch (opcion) {
-        case 1:
-            mostrarMenuUsuario();
-            break;
-        case 2:
-            mostrarMenuJugador();
-            break;
-        case 3:
-            mostrarMenuPartida();
-            break;
-        case 4:
-            cout << "Saliendo del programa..." << endl;
-            break;
-        default:
-            cout << "Opcion no valida. Intente de nuevo." << endl;
-            break;
+    if(opcion == 1) 
+    {
+        mostrarMenuUsuario();
+    } 
+    else if(opcion == 2) 
+    {
+        mostrarMenuJugador();
+    } 
+    else if(opcion == 3) 
+    {
+        mostrarMenuPartida();
     }
-} while (opcion != 4);
+    else if(opcion == 4) 
+    {
+        cout << "Saliendo del programa..." << endl;
+        break; // salir del bucle
+    }
+    
+} while (opcion != 1 && opcion != 2 && opcion != 3 && opcion != 4);
 
 }
 
