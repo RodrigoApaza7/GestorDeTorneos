@@ -13,6 +13,10 @@ private:
 
 public:
     Jugador();
+    void setnickname(const std::string& nick);
+    string getnickname() const;
+    int getId() const;
+
     void registrar();
     void mostrar();
 };
