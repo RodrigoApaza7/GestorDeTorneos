@@ -2,6 +2,7 @@
 #include "Usuario.h"
 #include "Jugador.h"
 #include "Partida.h"
+#include "consultar.h"
 #include <iostream>
 using namespace std;
 
@@ -127,7 +128,11 @@ void Menu::mostrarMenuJugador()
         } 
         else if(opcion == 2) 
         {
-            j.mostrar();
+            Consultar c;
+            int id;
+            cout << "Ingrese el ID del jugador a consultar: ";
+            cin >> id;
+            c.ConsultarJugador(id); 
         } 
         else if(opcion == 3) 
         {

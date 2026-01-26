@@ -14,8 +14,10 @@ void Consultar::ConsultarJugador(int id) {
 
     Jugador j;
 
-    while (fread(&j, sizeof(Jugador), 1, archivo)) {
-        if (j.getId() == id) {
+    while (fread(&j, sizeof(Jugador), 1, archivo)) 
+    {
+        if (j.getId() == id) 
+        {
             cout << "Jugador encontrado:" << endl;
             j.mostrar();
             fclose(archivo);
