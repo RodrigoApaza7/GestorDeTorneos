@@ -132,7 +132,7 @@ void Menu::mostrarMenuJugador()
             int id;
             cout << "Ingrese el ID del jugador a consultar: ";
             cin >> id;
-            c.ConsultarJugador(id); 
+            c.ConsultarJugador(id);
         } 
         else if(opcion == 3) 
         {
