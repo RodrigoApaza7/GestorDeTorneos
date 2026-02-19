@@ -5,10 +5,11 @@ class Partida
 {
 private:
     int id;
+    int idTorneo;
     int idEquipo1;
     int idEquipo2;
-    int resultadoEquipo1;
-    int resultadoEquipo2;
+    string fecha;
+    string estado;
 
 public:
     Partida();

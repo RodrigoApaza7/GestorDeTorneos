@@ -8,23 +8,15 @@ class Equipo
 {
 private:
     int id;
-    string nombreEquipo;
-    int cantidadJugadores;
+    int idTorneo;
 
 public:
     
     Equipo();
+    void setidTorneo(int idTorneo);
 
-    
-    
-    void setNombreEquipo(string nombreEquipo);
-    void setCantidadJugadores(int cantidadJugadores);
-
-    
     int getId();
-    string getNombreEquipo();
-    int getCantidadJugadores();
-
+    int getidTorneo();
     
     void registrar();
     void mostrar();
