@@ -5,7 +5,7 @@ DetalleEquipo::DetalleEquipo()
 {
     id = 0;
     idEquipo = 0;
-    idJugador = 0;
+    idJugadores.clear();
     nombre = "";
 }
 
@@ -14,9 +14,9 @@ void DetalleEquipo::setidEquipo(int idEquipo)
     this->idEquipo = idEquipo;
 }
 
-void DetalleEquipo::setidJugador(int idJugador) 
+void DetalleEquipo::setidJugadores(const vector<int>& idJugadores) 
 {
-    this->idJugador = idJugador;
+    this->idJugadores = idJugadores;
 }
 
 void DetalleEquipo::setnombre(const std::string& nombre) 
