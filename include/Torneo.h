@@ -5,7 +5,8 @@
 #include <string>
 using namespace std;
 
-class Torneo {
+class Torneo 
+{
 private:
     int id;
     std::string nombreTorneo;

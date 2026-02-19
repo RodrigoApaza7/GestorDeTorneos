@@ -4,7 +4,8 @@
 #include <string>
 using namespace std;
 
-class Jugador {
+class Jugador 
+{
 private:
     int id;
     char nombre[50];

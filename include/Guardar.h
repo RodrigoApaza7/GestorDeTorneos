@@ -6,7 +6,8 @@
 #include "Partida.h"
 #include "Usuario.h"
 
-class Guardar {
+class Guardar 
+{
 public:
     void GuardarJugador(Jugador j);
     void GuardarEquipo(Equipo e);

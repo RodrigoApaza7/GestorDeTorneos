@@ -3,7 +3,8 @@
 #include <string>
 using namespace std;
 
-class Usuario {
+class Usuario 
+{
 private:
     string username;
     string password;

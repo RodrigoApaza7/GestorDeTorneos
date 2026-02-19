@@ -1,7 +1,8 @@
 #ifndef PARTIDA_H
 #define PARTIDA_H
 
-class Partida {
+class Partida 
+{
 private:
     int id;
     int idEquipo1;

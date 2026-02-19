@@ -1,7 +1,8 @@
 #ifndef MENU_H
 #define MENU_H
 
-class Menu {
+class Menu 
+{
 private:
     int opcion;
     void linea();

@@ -4,7 +4,8 @@
 #include <string>
 using namespace std;
 
-class Equipo {
+class Equipo 
+{
 private:
     int id;
     string nombreEquipo;
