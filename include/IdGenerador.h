@@ -5,15 +5,14 @@ using namespace std;
 
 enum class TipoObjeto
 {   
-    juego =10,
-    torneo=20,
-    partida=30,
+    Jugador =10,
+    Torneo=20,
+    Partida=30,
     Equipo=40,
-    Jugador=50,
-    Ranking=60,
-    Emparejamiento=70,
-    SimularPartida=80,
-    DetalleEquipo=90,
+    Ranking=50,
+    Emparejamiento=60,
+    SimularPartida=70,
+    DetalleEquipo=80
 };
 
 class IdGenerador
