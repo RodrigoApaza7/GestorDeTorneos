@@ -9,7 +9,7 @@ using namespace std;
 class DetalleEquipo 
 {
 private:
-    int id;
+    unsigned long long id;
     int idEquipo;
     vector<int> idJugadores;
     string nombre;
@@ -21,10 +21,13 @@ public:
     void setidJugadores(const vector<int>& idJugadores);
     void setnombre(const std::string& nombre);
 
-    int getid();
+    unsigned long long getid();
     int getidEquipo();
     string getnombre();
     vector<int> getidJugadores();
+
+    void registrar();
+    void mostrar();
 };
 
 #endif // DETALLEEQUIPO_H

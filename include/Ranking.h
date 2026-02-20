@@ -7,7 +7,7 @@
 class Ranking 
 {
 private:
-    int id;        
+    unsigned long long id;
     int idTorneo;
     int idEquipo;        
     int posicion;
@@ -19,7 +19,7 @@ public:
     void setposicion(int posicion);
     void setpuntos(int puntos);
 
-    int getid();
+    unsigned long long getid();
     int getidTorneo();
     int getidEquipo();
     int getposicion();

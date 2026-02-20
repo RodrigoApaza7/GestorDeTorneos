@@ -4,12 +4,23 @@
 class SimularPartida 
 {
 private:
-    int id;
-    int idpartida;
+    unsigned long long id;
+    int idPartida;
     int golesEquipo1;
     int golesEquipo2;
 public:
-    void simularPartida(int idTorneo, int idEquipo1, int idEquipo2);
+    SimularPartida(int _idPartida, int _golesEquipo1, int _golesEquipo2);
+    void setidPartida(int idPartida);
+    void setgolesEquipo1(int golesEquipo1);
+    void setgolesEquipo2(int golesEquipo2);
+
+    unsigned long long getid();
+    int getidPartida();
+    int getgolesEquipo1();
+    int getgolesEquipo2();
+    
+    void registrar();
+    void mostrar();
 };
 
 #endif // SIMULARPARTIDA_H

@@ -5,6 +5,11 @@
 #include "Equipo.h"
 #include "Partida.h"
 #include "Usuario.h"
+#include "Torneo.h"
+#include "Ranking.h"
+#include "Emparejamiento.h"
+#include "SimularPartida.h"
+#include "DetalleEquipo.h"
 
 class Guardar 
 {
@@ -13,6 +18,11 @@ public:
     void GuardarEquipo(Equipo e);
     void GuardarPartida(Partida p);
     void GuardarUsuario(Usuario u);
+    void GuardarTorneo(Torneo t);
+    void GuardarRanking(Ranking r);
+    void GuardarEmparejamiento(Emparejamiento e);
+    void GuardarSimularPartida(SimularPartida s);
+    void GuardarDetalleEquipo(DetalleEquipo d);
 };
 
 #endif // GUARDAR_H

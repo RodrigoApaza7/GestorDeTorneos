@@ -8,7 +8,7 @@ using namespace std;
 class Emparejamiento 
 {
 private:
-    int id;
+    unsigned long long id;
     int idTorneo;
     int idEquipo1;
     int idEquipo2;
@@ -18,20 +18,21 @@ private:
 public:
     Emparejamiento();
     
-    void setid(int id);
     void setidTorneo(int idTorneo);
     void setidEquipo1(int idEquipo1);
     void setidEquipo2(int idEquipo2);
     void setfecha(const std::string& fecha);
     void setestado(const std::string& estado);
 
-    int getid();
+    unsigned long long getid();
     int getidTorneo();
     int getidEquipo1();
     int getidEquipo2();
     string getfecha();
     string getestado();
 
+    void registrar();
+    void mostrar();
 };
 
 #endif // EMPAREJAMIENTO_H
