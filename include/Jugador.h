@@ -7,7 +7,7 @@ using namespace std;
 class Jugador 
 {
 private:
-    int id;
+    unsigned long long id;
     char nombre[50];
     char nickname[50];
     int edad;
@@ -16,7 +16,7 @@ public:
     Jugador();
     void setnickname(const char* nick);
     const char* getnickname() const;
-    int getId() const;
+    unsigned long long getID() const;
 
     void registrar();
     void mostrar();

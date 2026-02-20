@@ -1,19 +1,20 @@
 #include "Jugador.h"
 #include "Guardar.h"
 #include "Consultar.h"
+#include "IdGenerador.h"
 #include <iostream>
 #include <string>
 using namespace std;
 
 Jugador::Jugador() 
 {
-    id = 0;
+    id = IdGenerador::generarId(TipoObjeto::Jugador);
     nombre[0] = '\0';
     nickname[0] = '\0';
     edad = 0;
 }
 
-int Jugador::getId() const {
+unsigned long long Jugador::getID() const {
     return id;
 }
 
