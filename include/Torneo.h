@@ -19,12 +19,12 @@ private:
 public:
     Torneo();
     
-    void setfecha(const std::string& fecha);
+    void setfecha(const string& fecha);
     void setidJuego(int idJuego);
-    void setestado(const std::string& estado);
-    void settipo(const std::string& tipo);
-    void setnombreTorneo(const std::string& nombreTorneo);
-    void setjuego(const std::string& juego);
+    void setestado(const string& estado);
+    void settipo(const string& tipo);
+    void setnombreTorneo(const string& nombreTorneo);
+    void setjuego(const string& juego);
 
     int getid();
     int getidJuego();
