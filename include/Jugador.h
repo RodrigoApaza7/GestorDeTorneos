@@ -1,7 +1,6 @@
 #ifndef JUGADOR_H
 #define JUGADOR_H
 
-#include <string>
 using namespace std;
 
 class Jugador 
@@ -16,7 +15,7 @@ public:
     Jugador();
     void setnickname(const char* nick);
     const char* getnickname() const;
-    unsigned long long getID() const;
+    unsigned long long getId() const;
 
     void registrar();
     void mostrar();

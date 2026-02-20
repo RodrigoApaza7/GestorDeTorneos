@@ -14,7 +14,7 @@ Jugador::Jugador()
     edad = 0;
 }
 
-unsigned long long Jugador::getID() const {
+unsigned long long Jugador::getId() const {
     return id;
 }
 
