@@ -3,7 +3,7 @@
 #include <string>
 using namespace std;
 
-Torneo::Torneo() : id(0), nombreTorneo(""), juego(""), fecha("") {}
+Torneo::Torneo() : id(0), nombreTorneo(""), idJuego(0), fecha("") {}
 
 void Torneo::setfecha(const std::string& fecha) {
     this->fecha = fecha;
@@ -13,20 +13,20 @@ void Torneo::setnombreTorneo(const string& nombreTorneo) {
     this->nombreTorneo = nombreTorneo;
 }
 
-void Torneo::setjuego(const string& juego) {
-    this->juego = juego;
+void Torneo::setidJuego(const int idJuego) {
+    this->idJuego = idJuego;
 }
 
-string Torneo::getid() {
-    return to_string(id);
+int Torneo::getid() {
+    return id;
 }
 
 string Torneo::getnombreTorneo() {
     return nombreTorneo;
 }
 
-string Torneo::getjuego() {
-    return juego;
+int Torneo::getidJuego() {
+    return idJuego;
 }
 
 string Torneo::getfecha() {
@@ -38,8 +38,8 @@ void Torneo::registrar() {
     cout << "Registrando torneo..." << endl;
     cout << "Ingrese el nombre del torneo: ";
     cin >> nombreTorneo;
-    cout << "ingrese el juego del torneo (LOL, CS2, Dota, Valorant): ";
-    cin >> juego;
+    cout << "ingrese el id del juego del torneo (LOL, CS2, Dota, Valorant): ";
+    cin >> idJuego;
     cout << "Ingrese la fecha del torneo (DD/MM/AAAA): ";
     cin >> fecha;
     cout << "Torneo registrado exitosamente." << endl;

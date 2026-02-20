@@ -21,6 +21,8 @@ private:
     static unsigned int contadores[100]; // Array para almacenar contadores de cada tipo de ID
 public:
     static unsigned long long generarId(TipoObjeto tipo);
+    void cargarContadores();
+    void guardarContadores();
 };    
 
 #endif // ID_GENERADOR_H
