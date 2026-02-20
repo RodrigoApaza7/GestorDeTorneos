@@ -1,7 +1,14 @@
 #include "Menu.h"
 #include "Usuario.h"
 #include "Jugador.h"
+#include "Equipo.h"
+#include "DetalleEquipo.h"
+#include "Torneo.h"
+#include "Ranking.h"
+#include "Emparejamiento.h"
+#include "SimularPartida.h"
 #include "Partida.h"
+#include "Juego.h"
 #include "consultar.h"
 #include <iostream>
 using namespace std;

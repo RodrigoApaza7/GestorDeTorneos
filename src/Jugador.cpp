@@ -25,8 +25,6 @@ const char* Jugador::getnickname() const {
 void Jugador::registrar() 
 {
     cout << "Registro de Jugador" << endl;
-    cout << "Ingrese ID: ";
-    cin >> id;
     cout << "Ingrese Nombre: ";
     cin.ignore();
     cin.getline(nombre, 50);

@@ -13,6 +13,13 @@ public:
     void mostrarMenuUsuario();
     void mostrarMenuJugador();
     void mostrarMenuPartida();
+    void mostrarMenuEquipo();
+    void mostrarMenuTorneo();
+    void mostrarMenuRanking();
+    void mostrarMenuEmparejamiento();
+    void mostrarMenuSimularPartida();
+    void mostrarMenuJuego();
+    
 };
 
 #endif // MENU_H
