@@ -8,7 +8,7 @@ using namespace std;
 class Juego 
 {
 private:
-    int id;
+    unsigned long long id;
     string nombre;
     string genero;
     string plataforma;
@@ -17,6 +17,7 @@ public:
     void setgenero(const string& genero);
     void setplataforma(const string& plataforma);
 
+    unsigned long long getId() const;
     string getnombre() const;
     string getgenero() const;
     string getplataforma() const;

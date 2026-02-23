@@ -1,9 +1,15 @@
 #include "Torneo.h"
+#include "Guardar.h"
+#include "Consultar.h"
+#include "IdGenerador.h"
+
 #include <iostream>
 #include <string>
 using namespace std;
 
-Torneo::Torneo() : id(0), nombreTorneo(""), idJuego(0), fecha("") {}
+Torneo::Torneo() : nombreTorneo(""), idJuego(0), fecha("") {
+    id = IdGenerador::generarId(TipoObjeto::Torneo);
+}
 
 void Torneo::setfecha(const string& fecha) 
 {
@@ -20,7 +26,7 @@ void Torneo::setidJuego(const int idJuego)
     this->idJuego = idJuego;
 }
 
-int Torneo::getid() 
+unsigned long long Torneo::getId() const 
 {
     return id;
 }

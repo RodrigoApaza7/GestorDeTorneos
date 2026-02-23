@@ -1,12 +1,14 @@
 #include "Usuario.h"
 #include "Guardar.h"
+#include "Consultar.h"
+#include "IdGenerador.h"
 #include <iostream>
 #include <string>
 using namespace std;
 
 Usuario::Usuario() 
 {
-
+    id = IdGenerador::generarId(TipoObjeto::Usuario);
     username = "";
     password = "";
     rol = "";
@@ -23,6 +25,10 @@ void Usuario::setPassword(const string& p) {
 
 void Usuario::setRol(const string& r) {
     rol = r;
+}
+
+unsigned long long Usuario::getId() const {
+    return id;
 }
 
 string Usuario::getUsername() const {
@@ -54,4 +60,13 @@ void Usuario::Registrar()
 
     Guardar g;
     g.GuardarUsuario(*this);
+}
+
+void Usuario::mostrar() 
+{
+    cout << "Datos del Usuario" << endl;
+    cout << "ID: " << id << endl;
+    cout << "Username: " << username << endl;
+    cout << "Password: " << password << endl;
+    cout << "Rol: " << rol << endl;
 }

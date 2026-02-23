@@ -10,6 +10,7 @@
 #include "Emparejamiento.h"
 #include "SimularPartida.h"
 #include "DetalleEquipo.h"
+#include "Juego.h"
 
 class Guardar 
 {
@@ -23,6 +24,7 @@ public:
     void GuardarEmparejamiento(Emparejamiento e);
     void GuardarSimularPartida(SimularPartida s);
     void GuardarDetalleEquipo(DetalleEquipo d);
+    void GuardarJuego(Juego j);
 };
 
 #endif // GUARDAR_H

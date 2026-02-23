@@ -6,9 +6,14 @@
 #include <iostream>
 using namespace std;
 
-SimularPartida::SimularPartida(int _idPartida, int _golesEquipo1, int _golesEquipo2) 
+SimularPartida::SimularPartida() : idPartida(0), golesEquipo1(0), golesEquipo2(0) 
 {
     id = IdGenerador::generarId(TipoObjeto::SimularPartida);
+}
+
+SimularPartida::SimularPartida(unsigned long long id, int _idPartida, int _golesEquipo1, int _golesEquipo2) 
+{
+    this->id = id;
     idPartida = _idPartida;
     golesEquipo1 = _golesEquipo1;
     golesEquipo2 = _golesEquipo2;
@@ -29,7 +34,7 @@ void SimularPartida::setgolesEquipo2(int golesEquipo2)
     this->golesEquipo2 = golesEquipo2;
 }
 
-unsigned long long SimularPartida::getid() 
+unsigned long long SimularPartida::getId() const 
 {
     return id;
 }

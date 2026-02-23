@@ -12,7 +12,9 @@ enum class TipoObjeto
     Ranking=50,
     Emparejamiento=60,
     SimularPartida=70,
-    DetalleEquipo=80
+    DetalleEquipo=80,
+    Usuario=90,
+    Juego=100
 };
 
 class IdGenerador

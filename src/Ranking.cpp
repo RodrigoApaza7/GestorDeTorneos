@@ -35,7 +35,7 @@ void Ranking::setpuntos(int puntos)
     this->puntos = puntos;
 }
 
-unsigned long long Ranking::getid() 
+unsigned long long Ranking::getId() const 
 {
     return id;
 }

@@ -7,7 +7,7 @@ using namespace std;
 class Partida 
 {
 private:
-    int id;
+    unsigned long long id;
     int idTorneo;
     int idEquipo1;
     int idEquipo2;
@@ -18,6 +18,9 @@ public:
     Partida();
     void setIdEquipo1(int idEq1);
     void setIdEquipo2(int idEq2);
+
+    unsigned long long getId() const;
+    int getIdTorneo() const;
     int getIdEquipo1() const;
     int getIdEquipo2() const;
     int getResultadoEquipo1() const;

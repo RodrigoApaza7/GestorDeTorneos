@@ -9,7 +9,7 @@ using namespace std;
 class Torneo 
 {
 private:
-    int id;
+    unsigned long long id;
     int idJuego;
     string nombreTorneo;
     string fecha;
@@ -26,7 +26,7 @@ public:
     void setnombreTorneo(const string& nombreTorneo);
     void setjuego(const string& juego);
 
-    int getid();
+    unsigned long long getId() const;
     int getidJuego();
     string getnombreTorneo();
     string getjuego();

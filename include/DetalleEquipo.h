@@ -21,7 +21,7 @@ public:
     void setidJugadores(const vector<int>& idJugadores);
     void setnombre(const std::string& nombre);
 
-    unsigned long long getid();
+    unsigned long long getId() const;
     int getidEquipo();
     string getnombre();
     vector<int> getidJugadores();

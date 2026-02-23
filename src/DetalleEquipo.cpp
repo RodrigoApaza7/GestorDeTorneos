@@ -28,7 +28,7 @@ void DetalleEquipo::setnombre(const std::string& nombre)
     this->nombre = nombre;
 }
 
-unsigned long long DetalleEquipo::getid() 
+unsigned long long DetalleEquipo::getId() const 
 {
     return id;
 }

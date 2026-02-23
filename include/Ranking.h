@@ -19,7 +19,7 @@ public:
     void setposicion(int posicion);
     void setpuntos(int puntos);
 
-    unsigned long long getid();
+    unsigned long long getId() const;
     int getidTorneo();
     int getidEquipo();
     int getposicion();
