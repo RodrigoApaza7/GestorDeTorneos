@@ -2,7 +2,6 @@
 #include <iostream>
 #include "Consultar.h"
 
-
 void Consultar::ConsultarJugador(unsigned long long id) 
 {
     FILE* archivo;
