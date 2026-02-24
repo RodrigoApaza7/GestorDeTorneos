@@ -12,16 +12,22 @@ void Consultar::ConsultarJugador(unsigned long long id)
         return;
     }
 
-    Jugador j;
+    JugadorData data;
 
-    while (fread(&j, sizeof(Jugador), 1, archivo)) 
+    while (fread(&data, sizeof(JugadorData), 1, archivo)) 
     {
-        if (j.getId() == id) 
+        Jugador j(
+            data.id,
+            data.nombre,
+            data.nickname,
+            data.edad
+        );
+
+        if(j.getId() == id) 
         {
             cout << "Jugador encontrado:" << endl;
             j.mostrar();
-            fclose(archivo);
-            return;
+            break;
         }
     }
 
@@ -38,16 +44,22 @@ void Consultar::ConsultarEquipo(unsigned long long id)
         return;
     }
 
-    Equipo e;
+    EquipoData data;
 
-    while (fread(&e, sizeof(Equipo), 1, archivo)) 
+    while (fread(&data, sizeof(EquipoData), 1, archivo)) 
     {
-        if (e.getId() == id) 
+        Equipo e(
+            data.id,
+            data.nombre,
+            data.descripcion,
+            data.cantidadJugadores
+        );
+
+        if(j.getId() == id) 
         {
-            cout << "Equipo encontrado:" << endl;
-            e.mostrar();
-            fclose(archivo);
-            return;
+            cout << "Jugador encontrado:" << endl;
+            j.mostrar();
+            break;
         }
     }
 
@@ -234,4 +246,33 @@ void Consultar::ConsultarSimulacion(unsigned long long id)
     }
 
     fclose(archivo);
+}
+
+vector<Equipo> Consultar::ObtenerEquiposPorTorneo(unsigned long long idTorneo)
+{   
+    vector<Equipo> equiposTorneo;
+    FILE* archivo;
+    archivo = fopen("equipos.bin", "rb"); // abrir en modo lectura binaria
+
+    if (archivo == NULL) 
+    {
+        cout << "No hay equipos registrados." << endl;
+        return equiposTorneo;
+    }
+
+    Equipo e;
+
+    cout << "Equipos en el torneo con ID " << idTorneo << ":" << endl;
+
+    while (fread(&e, sizeof(Equipo), 1, archivo)) 
+    {
+        if (e.getidTorneo() == idTorneo)
+        {
+            equiposTorneo.push_back(e);
+        }
+    }
+
+    fclose(archivo);
+
+    return equiposTorneo;
 }

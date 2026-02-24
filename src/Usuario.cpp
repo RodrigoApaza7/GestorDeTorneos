@@ -6,13 +6,20 @@
 #include <string>
 using namespace std;
 
-Usuario::Usuario() 
+Usuario::Usuario(const string& username, const string& password, const string& rol) 
 {
     id = IdGenerador::generarId(TipoObjeto::Usuario);
-    username = "";
-    password = "";
-    rol = "";
-    
+    this->username = username;
+    this->password = password;
+    this->rol = rol;
+}
+
+Usuario::Usuario(unsigned long long id, const string& username, const string& password, const string& rol) 
+{
+    this->id = id;
+    this->username = username;
+    this->password = password;
+    this->rol = rol;
 }
 
 void Usuario::setUsername(const string& u) {

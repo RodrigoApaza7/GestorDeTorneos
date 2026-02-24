@@ -8,21 +8,23 @@ class Partida
 {
 private:
     unsigned long long id;
-    int idTorneo;
-    int idEquipo1;
-    int idEquipo2;
+    unsigned long long idTorneo;
+    unsigned long long idEquipo1;
+    unsigned long long idEquipo2;
     string fecha;
     string estado;
 
 public:
-    Partida();
-    void setIdEquipo1(int idEq1);
-    void setIdEquipo2(int idEq2);
+    Partida(unsigned long long idTorneo, unsigned long long idEquipo1, unsigned long long idEquipo2, const string& fecha, const string& estado);
+    Partida(unsigned long long id, unsigned long long idTorneo, unsigned long long idEquipo1, unsigned long long idEquipo2, const string& fecha, const string& estado);
+
+    void setIdEquipo1(unsigned long long idEq1);
+    void setIdEquipo2(unsigned long long idEq2);
 
     unsigned long long getId() const;
-    int getIdTorneo() const;
-    int getIdEquipo1() const;
-    int getIdEquipo2() const;
+    unsigned long long getIdTorneo() const;
+    unsigned long long getIdEquipo1() const;
+    unsigned long long getIdEquipo2() const;
     int getResultadoEquipo1() const;
     int getResultadoEquipo2() const;
 

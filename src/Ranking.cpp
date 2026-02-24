@@ -6,21 +6,30 @@
 #include <iostream>
 using namespace std;
 
-Ranking::Ranking() 
+Ranking::Ranking(unsigned long long idTorneo, unsigned long long idEquipo, int posicion, int puntos) 
 {
     id = IdGenerador::generarId(TipoObjeto::Ranking);
-    idTorneo = 0;
-    idEquipo = 0;
-    posicion = 0;
-    puntos = 0;
+    this->idTorneo = idTorneo;
+    this->idEquipo = idEquipo;
+    this->posicion = posicion;
+    this->puntos = puntos;
 }
 
-void Ranking::setidTorneo(int idTorneo) 
+Ranking::Ranking(unsigned long long id, unsigned long long idTorneo, unsigned long long idEquipo, int posicion, int puntos)
+{
+    this->id = id;
+    this->idTorneo = idTorneo;
+    this->idEquipo = idEquipo;
+    this->posicion = posicion;
+    this->puntos = puntos;
+}
+
+void Ranking::setidTorneo(unsigned long long idTorneo) 
 {
     this->idTorneo = idTorneo;
 }
 
-void Ranking::setidEquipo(int idEquipo) 
+void Ranking::setidEquipo(unsigned long long idEquipo) 
 {
     this->idEquipo = idEquipo;
 }
@@ -40,22 +49,22 @@ unsigned long long Ranking::getId() const
     return id;
 }
 
-int Ranking::getidTorneo() 
+unsigned long long Ranking::getIdTorneo() 
 {
     return idTorneo;
 }
 
-int Ranking::getidEquipo() 
+unsigned long long Ranking::getIdEquipo() 
 {
     return idEquipo;
 }
 
-int Ranking::getposicion() 
+int Ranking::getPosicion() 
 {
     return posicion;
 }
 
-int Ranking::getpuntos() 
+int Ranking::getPuntos() 
 {
     return puntos;
 }

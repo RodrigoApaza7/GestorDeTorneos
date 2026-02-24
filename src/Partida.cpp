@@ -7,15 +7,29 @@
 #include <string>
 using namespace std;
 
-Partida::Partida(): idEquipo1(0), idEquipo2(0) {
+Partida::Partida(unsigned long long idTorneo, unsigned long long idEquipo1, unsigned long long idEquipo2, const string& fecha, const string& estado) {
     id = IdGenerador::generarId(TipoObjeto::Partida);
+    this->idTorneo = idTorneo;
+    this->idEquipo1 = idEquipo1;
+    this->idEquipo2 = idEquipo2;
+    this->fecha = fecha;
+    this->estado = estado;
 }
 
-void Partida::setIdEquipo1(int idEq1) {
+Partida::Partida(unsigned long long id, unsigned long long idTorneo, unsigned long long idEquipo1, unsigned long long idEquipo2, const string& fecha, const string& estado) {
+    this->id = id;
+    this->idTorneo = idTorneo;
+    this->idEquipo1 = idEquipo1;
+    this->idEquipo2 = idEquipo2;
+    this->fecha = fecha;
+    this->estado = estado;
+}
+
+void Partida::setIdEquipo1(unsigned long long idEq1) {
     idEquipo1 = idEq1;
 }
 
-void Partida::setIdEquipo2(int idEq2) {
+void Partida::setIdEquipo2(unsigned long long idEq2) {
     idEquipo2 = idEq2;
 }
 
@@ -23,15 +37,15 @@ unsigned long long Partida::getId() const {
     return id;
 }
 
-int Partida::getIdTorneo() const {
+unsigned long long Partida::getIdTorneo() const {
     return idTorneo;
 }
 
-int Partida::getIdEquipo1() const {
+unsigned long long Partida::getIdEquipo1() const {
     return idEquipo1;
 }
 
-int Partida::getIdEquipo2() const {
+unsigned long long Partida::getIdEquipo2() const {
     return idEquipo2;
 }
 

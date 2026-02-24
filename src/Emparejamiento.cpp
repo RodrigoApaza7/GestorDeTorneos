@@ -4,69 +4,79 @@
 #include "Consultar.h"
 
 #include <iostream>
+#include <vector>
 using namespace std;
 
-Emparejamiento::Emparejamiento() 
+Emparejamiento::Emparejamiento(unsigned long long idTorneo, unsigned long long idEquipo1, unsigned long long idEquipo2, const string& fecha, const string& estado) 
 {
     id = IdGenerador::generarId(TipoObjeto::Emparejamiento);
-    idTorneo = 0;
-    idEquipo1 = 0;
-    idEquipo2 = 0;
-    fecha = "";
-    estado = "";
+    this->idTorneo = idTorneo;
+    this->idEquipo1 = idEquipo1;
+    this->idEquipo2 = idEquipo2;
+    this->fecha = fecha;
+    this->estado = estado;
+}
+Emparejamiento::Emparejamiento(unsigned long long id, unsigned long long idTorneo, unsigned long long idEquipo1, unsigned long long idEquipo2, const string& fecha, const string& estado)
+{
+    this->id = id;
+    this->idTorneo = idTorneo;
+    this->idEquipo1 = idEquipo1;
+    this->idEquipo2 = idEquipo2;
+    this->fecha = fecha;
+    this->estado = estado;
 }
 
-void Emparejamiento::setidTorneo(int idTorneo) 
+void Emparejamiento::setIdTorneo(unsigned long long idTorneo) 
 {
     this->idTorneo = idTorneo;
 }
 
-void Emparejamiento::setidEquipo1(int idEquipo1) 
+void Emparejamiento::setIdEquipo1(unsigned long long idEquipo1) 
 {
     this->idEquipo1 = idEquipo1;
 }
 
-void Emparejamiento::setidEquipo2(int idEquipo2) 
+void Emparejamiento::setIdEquipo2(unsigned long long idEquipo2) 
 {
     this->idEquipo2 = idEquipo2;
 }
 
-void Emparejamiento::setfecha(const std::string& fecha) 
+void Emparejamiento::setFecha(const std::string& fecha) 
 {
     this->fecha = fecha;
 }
 
-void Emparejamiento::setestado(const std::string& estado) 
+void Emparejamiento::setEstado(const std::string& estado) 
 {
     this->estado = estado;
 }
 
-unsigned long long Emparejamiento::getid() 
+unsigned long long Emparejamiento::getId() 
 {
     return id;
 }
 
-int Emparejamiento::getidTorneo() 
+unsigned long long Emparejamiento::getIdTorneo() 
 {
     return idTorneo;
 }
 
-int Emparejamiento::getidEquipo1() 
+unsigned long long Emparejamiento::getIdEquipo1() 
 {
     return idEquipo1;
 }
 
-int Emparejamiento::getidEquipo2() 
+unsigned long long Emparejamiento::getIdEquipo2() 
 {
     return idEquipo2;
 }
 
-string Emparejamiento::getfecha() 
+string Emparejamiento::getFecha() 
 {
     return fecha;
 }
 
-string Emparejamiento::getestado() 
+string Emparejamiento::getEstado() 
 {
     return estado;
 }

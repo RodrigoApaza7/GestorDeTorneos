@@ -9,30 +9,33 @@ class Emparejamiento
 {
 private:
     unsigned long long id;
-    int idTorneo;
-    int idEquipo1;
-    int idEquipo2;
+    unsigned long long idTorneo;
+    unsigned long long idEquipo1;
+    unsigned long long idEquipo2;
     string fecha;
     string estado;
 
 public:
-    Emparejamiento();
+    Emparejamiento(unsigned long long idTorneo, unsigned long long idEquipo1, unsigned long long idEquipo2, const string& fecha, const string& estado);
+    Emparejamiento(unsigned long long id, unsigned long long idTorneo, unsigned long long idEquipo1, unsigned long long idEquipo2, const string& fecha, const string& estado);
     
-    void setidTorneo(int idTorneo);
-    void setidEquipo1(int idEquipo1);
-    void setidEquipo2(int idEquipo2);
-    void setfecha(const std::string& fecha);
-    void setestado(const std::string& estado);
+    void setIdTorneo(unsigned long long idTorneo);
+    void setIdEquipo1(unsigned long long idEquipo1);
+    void setIdEquipo2(unsigned long long idEquipo2);
+    void setFecha(const std::string& fecha);
+    void setEstado(const std::string& estado);
 
-    unsigned long long getid();
-    int getidTorneo();
-    int getidEquipo1();
-    int getidEquipo2();
-    string getfecha();
-    string getestado();
+    unsigned long long getId();
+    unsigned long long getIdTorneo();
+    unsigned long long getIdEquipo1();
+    unsigned long long getIdEquipo2();
+    string getFecha();
+    string getEstado();
 
     void registrar();
     void mostrar();
+
+    void GenerarEmparejamiento(unsigned long long idTorneo);
 };
 
 #endif // EMPAREJAMIENTO_H

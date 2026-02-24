@@ -6,30 +6,33 @@
 #include <iostream>
 using namespace std;
 
-SimularPartida::SimularPartida() : idPartida(0), golesEquipo1(0), golesEquipo2(0) 
+SimularPartida::SimularPartida(unsigned long long idPartida, int golesEquipo1, int golesEquipo2) 
 {
     id = IdGenerador::generarId(TipoObjeto::SimularPartida);
+    this->idPartida = idPartida;
+    this->golesEquipo1 = golesEquipo1;
+    this->golesEquipo2 = golesEquipo2;
 }
 
-SimularPartida::SimularPartida(unsigned long long id, int _idPartida, int _golesEquipo1, int _golesEquipo2) 
+SimularPartida::SimularPartida(unsigned long long id, unsigned long long idPartida, int golesEquipo1, int golesEquipo2)
 {
     this->id = id;
-    idPartida = _idPartida;
-    golesEquipo1 = _golesEquipo1;
-    golesEquipo2 = _golesEquipo2;
+    this->idPartida = idPartida;
+    this->golesEquipo1 = golesEquipo1;
+    this->golesEquipo2 = golesEquipo2;
 }
 
-void SimularPartida::setidPartida(int idPartida) 
+void SimularPartida::setIdPartida(unsigned long long idPartida) 
 {
     this->idPartida = idPartida;
 }
 
-void SimularPartida::setgolesEquipo1(int golesEquipo1) 
+void SimularPartida::setGolesEquipo1(int golesEquipo1) 
 {
     this->golesEquipo1 = golesEquipo1;
 }
 
-void SimularPartida::setgolesEquipo2(int golesEquipo2) 
+void SimularPartida::setGolesEquipo2(int golesEquipo2) 
 {
     this->golesEquipo2 = golesEquipo2;
 }
@@ -39,17 +42,17 @@ unsigned long long SimularPartida::getId() const
     return id;
 }
 
-int SimularPartida::getidPartida() 
+unsigned long long SimularPartida::getIdPartida() 
 {
     return idPartida;
 }
 
-int SimularPartida::getgolesEquipo1() 
+int SimularPartida::getGolesEquipo1() 
 {
     return golesEquipo1;
 }
 
-int SimularPartida::getgolesEquipo2() 
+int SimularPartida::getGolesEquipo2() 
 {
     return golesEquipo2;
 }

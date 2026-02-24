@@ -8,12 +8,20 @@
 
 using namespace std;
 
-Juego::Juego() 
+Juego::Juego(const string& nombre, const string& genero, const string& plataforma)  
 {
     id = IdGenerador::generarId(TipoObjeto::Juego);
-    nombre = "";
-    genero = "";
-    plataforma = "";
+    this->nombre = nombre;
+    this->genero = genero;
+    this->plataforma = plataforma;
+}
+
+Juego::Juego(unsigned long long id, const string& nombre, const string& genero, const string& plataforma) 
+{
+    this->id = id;
+    this->nombre = nombre;
+    this->genero = genero;
+    this->plataforma = plataforma;
 }
 
 void Juego::setnombre(const string& nombre) 

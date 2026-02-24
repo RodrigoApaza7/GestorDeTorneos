@@ -5,20 +5,28 @@
 #include <iostream>
 using namespace std;
 
-DetalleEquipo::DetalleEquipo() 
+DetalleEquipo::DetalleEquipo(unsigned long long idEquipo, const vector<unsigned long long>& idJugadores, const string& nombre) 
 {
     id = IdGenerador::generarId(TipoObjeto::DetalleEquipo);
-    idEquipo = 0;
-    idJugadores.clear();
-    nombre = "";
+    this->idEquipo = idEquipo;
+    this->idJugadores = idJugadores;
+    this->nombre = nombre;
 }
 
-void DetalleEquipo::setidEquipo(int idEquipo) 
+DetalleEquipo::DetalleEquipo(unsigned long long id, unsigned long long idEquipo,vector<unsigned long long> idJugadores, const string& nombre)
+{
+    this->id = id;
+    this->idEquipo = idEquipo;
+    this->idJugadores = idJugadores;
+    this->nombre = nombre;
+}
+
+void DetalleEquipo::setidEquipo(unsigned long long idEquipo) 
 {
     this->idEquipo = idEquipo;
 }
 
-void DetalleEquipo::setidJugadores(const vector<int>& idJugadores) 
+void DetalleEquipo::setidJugadores(const vector<unsigned long long>& idJugadores) 
 {
     this->idJugadores = idJugadores;
 }
@@ -33,7 +41,7 @@ unsigned long long DetalleEquipo::getId() const
     return id;
 }
 
-int DetalleEquipo::getidEquipo() 
+unsigned long long DetalleEquipo::getidEquipo() 
 {
     return idEquipo;
 }
@@ -43,7 +51,7 @@ string DetalleEquipo::getnombre()
     return nombre;
 }
 
-vector<int> DetalleEquipo::getidJugadores() 
+vector<unsigned long long> DetalleEquipo::getidJugadores() 
 {
     return idJugadores;
 }

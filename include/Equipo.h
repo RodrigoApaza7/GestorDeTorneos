@@ -7,16 +7,19 @@ using namespace std;
 class Equipo 
 {
 private:
-    int id;
-    int idTorneo;
+    unsigned long long id;
+    unsigned long long idTorneo;
 
 public:
     
-    Equipo();
-    void setidTorneo(int idTorneo);
+    Equipo(unsigned long long idTorneo);
+    Equipo(unsigned long long id, unsigned long long idTorneo);
 
-    int getId();
-    int getidTorneo();
+
+    void setidTorneo(unsigned long long idTorneo);
+
+    unsigned long long getId();
+    unsigned long long getidTorneo();
     
     void registrar();
     void mostrar();

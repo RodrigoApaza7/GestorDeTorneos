@@ -14,7 +14,6 @@ unsigned long long IdGenerador::generarId(TipoObjeto tipo)
     return static_cast<unsigned long long>(prefijo) * 100000ULL + ++contador;
 }
 
-//guardar el id generado en un archivo binario
 
 void IdGenerador::cargarContadores() 
 {

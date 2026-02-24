@@ -11,6 +11,7 @@
 #include "SimularPartida.h"
 #include "DetalleEquipo.h"
 #include "Juego.h"
+#include "Data.h"
 
 class Guardar 
 {

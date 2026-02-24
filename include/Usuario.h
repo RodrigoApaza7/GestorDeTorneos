@@ -12,7 +12,8 @@ private:
     string rol;
 
 public:
-    Usuario();
+    Usuario(const string& username, const string& password, const string& rol);
+    Usuario(unsigned long long id, const string& username, const string& password, const string& rol);
     
     void setUsername(const string& u);
     void setPassword(const string& p);

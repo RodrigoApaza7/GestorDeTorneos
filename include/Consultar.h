@@ -10,23 +10,14 @@
 #include "Ranking.h"
 #include "SimularPartida.h"
 #include "Jugador.h"
+#include "Data.h"
+
 #include <vector>
 #include <string>
 using namespace std;
 
 class Consultar 
 {
-private:
-    vector<Jugador> jugadores;
-    vector<Equipo> equipos;
-    vector<Partida> partidas;
-    vector<Usuario> usuarios;
-    vector<DetalleEquipo> detallesEquipos;
-    vector<Juego> juegos;
-    vector<Torneo> torneos;
-    vector<Ranking> rankings;
-    vector<SimularPartida> simulaciones;
-    vector<Jugador> jugadores;
 public:
     void ConsultarJugador(unsigned long long id);
     void ConsultarEquipo(unsigned long long id);
@@ -37,7 +28,8 @@ public:
     void ConsultarTorneo(unsigned long long id);
     void ConsultarRanking(unsigned long long id);
     void ConsultarSimulacion(unsigned long long id);
-    void ConsultarJugador(unsigned long long id);
+
+    vector<Equipo> ConsultarEquiposPorTorneo(unsigned long long idTorneo);
 };
 
 #endif // CONSULTAR_H

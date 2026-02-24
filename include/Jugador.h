@@ -7,14 +7,22 @@ class Jugador
 {
 private:
     unsigned long long id;
-    char nombre[50];
-    char nickname[50];
+    string nombre;
+    string nickname;
     int edad;
 
 public:
-    Jugador();
-    void setnickname(const char* nick);
-    const char* getnickname() const;
+    Jugador(string nombre, string nickname, int edad);
+    Jugador(unsigned long long id, string nombre, string nickname, int edad);
+
+    void setnickname(const string& nick);
+    void setnombre(const string& nombre);
+    void setedad(int edad);
+
+    
+    const string& getNombre() const;
+    const string& getNickname() const;
+    int getEdad() const;
     unsigned long long getId() const;
 
     void registrar();

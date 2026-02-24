@@ -13,6 +13,9 @@ private:
     string genero;
     string plataforma;
 public:
+    Juego(const string& nombre, const string& genero, const string& plataforma);
+    Juego(unsigned long long id, const string& nombre, const string& genero, const string& plataforma);
+    
     void setnombre(const string& nombre);
     void setgenero(const string& genero);
     void setplataforma(const string& plataforma);

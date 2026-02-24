@@ -6,20 +6,36 @@
 #include <string>
 using namespace std;
 
-Jugador::Jugador() 
+Jugador::Jugador(string nombre, string nickname, int edad) 
 {
     id = IdGenerador::generarId(TipoObjeto::Jugador);
-    nombre[0] = '\0';
-    nickname[0] = '\0';
-    edad = 0;
+    this->nombre = nombre;
+    this->nickname = nickname;
+    this->edad = edad;
+}
+
+Jugador::Jugador(unsigned long long id, string nombre, string nickname, int edad) 
+{
+    this->id = id;
+    this->nombre = nombre;
+    this->nickname = nickname;
+    this->edad = edad;
 }
 
 unsigned long long Jugador::getId() const {
     return id;
 }
 
-const char* Jugador::getnickname() const {
+const string& Jugador::getNickname() const {
     return nickname;
+}
+
+const string& Jugador::getNombre() const {
+    return nombre;
+}
+
+int Jugador::getEdad() const {
+    return edad;
 }
 
 void Jugador::registrar() 
@@ -27,9 +43,9 @@ void Jugador::registrar()
     cout << "Registro de Jugador" << endl;
     cout << "Ingrese Nombre: ";
     cin.ignore();
-    cin.getline(nombre, 50);
+    getline(cin, nombre);
     cout << "Ingrese Nickname: ";
-    cin.getline(nickname, 50);
+    getline(cin, nickname);
     cout << "Ingrese Edad: ";
     cin >> edad;
 

@@ -7,8 +7,24 @@
 #include <string>
 using namespace std;
 
-Torneo::Torneo() : nombreTorneo(""), idJuego(0), fecha("") {
+Torneo::Torneo(unsigned long long idJuego, const string& nombreTorneo, const string& fecha, const string& estado, const string& tipo) 
+{
     id = IdGenerador::generarId(TipoObjeto::Torneo);
+    this->idJuego = idJuego;
+    this->nombreTorneo = nombreTorneo;
+    this->fecha = fecha;
+    this->estado = estado;
+    this->tipo = tipo;
+}
+
+Torneo::Torneo(unsigned long long id, unsigned long long idJuego, const string& nombreTorneo, const string& fecha, const string& estado, const string& tipo) 
+{
+    this->id = id;
+    this->idJuego = idJuego;
+    this->nombreTorneo = nombreTorneo;
+    this->fecha = fecha;
+    this->estado = estado;
+    this->tipo = tipo;
 }
 
 void Torneo::setfecha(const string& fecha) 
@@ -21,7 +37,7 @@ void Torneo::setnombreTorneo(const string& nombreTorneo)
     this->nombreTorneo = nombreTorneo;
 }
 
-void Torneo::setidJuego(const int idJuego) 
+void Torneo::setIdJuego(const unsigned long long idJuego) 
 {
     this->idJuego = idJuego;
 }
@@ -31,21 +47,25 @@ unsigned long long Torneo::getId() const
     return id;
 }
 
-string Torneo::getnombreTorneo() 
+string Torneo::getNombreTorneo() 
 {
     return nombreTorneo;
 }
 
-int Torneo::getidJuego() 
+unsigned long long Torneo::getIdJuego() 
 {
     return idJuego;
 }
 
-string Torneo::getfecha() 
+string Torneo::getFecha() 
 {
     return fecha;
 }
 
+string Torneo::getEstado() 
+{
+    return estado;
+}
 
 void Torneo::registrar() 
 {
