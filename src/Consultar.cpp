@@ -50,15 +50,13 @@ void Consultar::ConsultarEquipo(unsigned long long id)
     {
         Equipo e(
             data.id,
-            data.nombre,
-            data.descripcion,
-            data.cantidadJugadores
+            data.idTorneo
         );
 
-        if(j.getId() == id) 
+        if(e.getId() == id) 
         {
-            cout << "Jugador encontrado:" << endl;
-            j.mostrar();
+            cout << "Equipo encontrado:" << endl;
+            e.mostrar();
             break;
         }
     }
@@ -76,16 +74,24 @@ void Consultar::ConsultarPartida(unsigned long long id)
         return;
     }
 
-    Partida p;
+    PartidaData data;
 
-    while (fread(&p, sizeof(Partida), 1, archivo)) 
+    while (fread(&data, sizeof(PartidaData), 1, archivo)) 
     {
-        if (p.getId() == id) 
+        Partida p(
+            data.id,
+            data.idTorneo,
+            data.idEquipo1,
+            data.idEquipo2,
+            data.fecha,
+            data.estado
+        );
+
+        if(p.getId() == id) 
         {
             cout << "Partida encontrada:" << endl;
             p.mostrar();
-            fclose(archivo);
-            return;
+            break;
         }
     }
 
@@ -94,24 +100,30 @@ void Consultar::ConsultarPartida(unsigned long long id)
 
 void Consultar::ConsultarUsuario(unsigned long long id) 
 {
-    FILE* archivo;
-    archivo = fopen("usuario.bin", "rb"); // abrir en modo lectura binaria
+        FILE* archivo;
+    archivo = fopen("usuarios.bin", "rb"); // abrir en modo lectura binaria
 
     if (archivo == NULL) {
         cout << "No hay usuarios registrados." << endl;
         return;
     }
 
-    Usuario u;
+    UsuarioData data;
 
-    while (fread(&u, sizeof(Usuario), 1, archivo)) 
+    while (fread(&data, sizeof(UsuarioData), 1, archivo)) 
     {
-        if (u.getId() == id)
+        Usuario u(
+            data.id,
+            data.nombre,
+            data.contraseña,
+            data.rol
+        );
+
+        if(u.getId() == id) 
         {
             cout << "Usuario encontrado:" << endl;
             u.mostrar();
-            fclose(archivo);
-            return;
+            break;
         }
     }
 
@@ -128,16 +140,22 @@ void Consultar::ConsultarDetalleEquipo(unsigned long long id)
         return;
     }
 
-    DetalleEquipo de;
+    DetalleEquipoData data;
 
-    while (fread(&de, sizeof(DetalleEquipo), 1, archivo)) 
+    while (fread(&data, sizeof(DetalleEquipoData), 1, archivo)) 
     {
-        if (de.getId() == id)
+        DetalleEquipo de(
+            data.id,
+            data.idEquipo,
+            data.idJugadores,
+            data.nombre
+        );
+
+        if(de.getId() == id) 
         {
             cout << "Detalle de equipo encontrado:" << endl;
             de.mostrar();
-            fclose(archivo);
-            return;
+            break;
         }
     }
 
@@ -154,16 +172,22 @@ void Consultar::ConsultarJuego(unsigned long long id)
         return;
     }
 
-    Juego j;
+    JuegoData data;
 
-    while (fread(&j, sizeof(Juego), 1, archivo)) 
+    while (fread(&data, sizeof(JuegoData), 1, archivo)) 
     {
-        if (j.getId() == id)
+        Juego j(
+            data.id,
+            data.nombre,
+            data.genero,
+            data.plataforma
+        );
+
+        if(j.getId() == id) 
         {
-            cout << "Juego encontrado:" << endl;
+            cout << "Jugador encontrado:" << endl;
             j.mostrar();
-            fclose(archivo);
-            return;
+            break;
         }
     }
 
@@ -180,16 +204,24 @@ void Consultar::ConsultarTorneo(unsigned long long id)
         return;
     }
 
-    Torneo t;
+    TorneoData data;
 
-    while (fread(&t, sizeof(Torneo), 1, archivo)) 
+    while (fread(&data, sizeof(TorneoData), 1, archivo)) 
     {
-        if (t.getId() == id)
+        Torneo t(
+            data.id,
+            data.idJuego,
+            data.nombre,
+            data.fecha,
+            data.estado,
+            data.tipo
+        );
+
+        if(t.getId() == id) 
         {
             cout << "Torneo encontrado:" << endl;
             t.mostrar();
-            fclose(archivo);
-            return;
+            break;
         }
     }
 
@@ -206,16 +238,23 @@ void Consultar::ConsultarRanking(unsigned long long id)
         return;
     }
 
-    Ranking r;
+    RankingData data;
 
-    while (fread(&r, sizeof(Ranking), 1, archivo)) 
+    while (fread(&data, sizeof(RankingData), 1, archivo)) 
     {
-        if (r.getId() == id)
+        Ranking r(
+            data.id,
+            data.idTorneo,
+            data.idEquipo,
+            data.posicion,
+            data.puntos
+        );
+
+        if(r.getId() == id) 
         {
             cout << "Ranking encontrado:" << endl;
             r.mostrar();
-            fclose(archivo);
-            return;
+            break;
         }
     }
 
@@ -232,16 +271,22 @@ void Consultar::ConsultarSimulacion(unsigned long long id)
         return;
     }
 
-    SimularPartida s;
+    SimularPartidaData data;
 
-    while (fread(&s, sizeof(SimularPartida), 1, archivo)) 
+    while (fread(&data, sizeof(SimularPartidaData), 1, archivo)) 
     {
-        if (s.getId() == id)
+        SimularPartida sp(
+            data.id,
+            data.idPartida,
+            data.golesEquipo1,
+            data.golesEquipo2
+        );
+
+        if(sp.getId() == id) 
         {
             cout << "Simulación encontrada:" << endl;
-            s.mostrar();
-            fclose(archivo);
-            return;
+            sp.mostrar();
+            break;
         }
     }
 
@@ -249,25 +294,27 @@ void Consultar::ConsultarSimulacion(unsigned long long id)
 }
 
 vector<Equipo> Consultar::ObtenerEquiposPorTorneo(unsigned long long idTorneo)
-{   
+{
     vector<Equipo> equiposTorneo;
-    FILE* archivo;
-    archivo = fopen("equipos.bin", "rb"); // abrir en modo lectura binaria
 
-    if (archivo == NULL) 
+    FILE* archivo = fopen("equipos.bin", "rb");
+
+    if (archivo == NULL)
     {
-        cout << "No hay equipos registrados." << endl;
         return equiposTorneo;
     }
 
-    Equipo e;
+    EquipoData data;
 
-    cout << "Equipos en el torneo con ID " << idTorneo << ":" << endl;
-
-    while (fread(&e, sizeof(Equipo), 1, archivo)) 
+    while (fread(&data, sizeof(EquipoData), 1, archivo))
     {
-        if (e.getidTorneo() == idTorneo)
+        if (data.idTorneo == idTorneo)
         {
+            Equipo e(
+                data.id,
+                data.idTorneo
+            );
+
             equiposTorneo.push_back(e);
         }
     }

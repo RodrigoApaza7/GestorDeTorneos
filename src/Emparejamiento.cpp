@@ -7,110 +7,44 @@
 #include <vector>
 using namespace std;
 
-Emparejamiento::Emparejamiento(unsigned long long idTorneo, unsigned long long idEquipo1, unsigned long long idEquipo2, const string& fecha, const string& estado) 
+void Emparejamiento::GenerarEmparejamiento(unsigned long long idTorneo)
 {
-    id = IdGenerador::generarId(TipoObjeto::Emparejamiento);
-    this->idTorneo = idTorneo;
-    this->idEquipo1 = idEquipo1;
-    this->idEquipo2 = idEquipo2;
-    this->fecha = fecha;
-    this->estado = estado;
-}
-Emparejamiento::Emparejamiento(unsigned long long id, unsigned long long idTorneo, unsigned long long idEquipo1, unsigned long long idEquipo2, const string& fecha, const string& estado)
-{
-    this->id = id;
-    this->idTorneo = idTorneo;
-    this->idEquipo1 = idEquipo1;
-    this->idEquipo2 = idEquipo2;
-    this->fecha = fecha;
-    this->estado = estado;
-}
+    Consultar c;
+    vector<Equipo> equipos = c.ObtenerEquiposPorTorneo(idTorneo);
 
-void Emparejamiento::setIdTorneo(unsigned long long idTorneo) 
-{
-    this->idTorneo = idTorneo;
-}
+    if (equipos.size() < 2)
+    {
+        cout << "No hay suficientes equipos para generar emparejamiento." << endl;
+        return;
+    }
 
-void Emparejamiento::setIdEquipo1(unsigned long long idEquipo1) 
-{
-    this->idEquipo1 = idEquipo1;
-}
+    if (equipos.size() % 2 != 0)
+    {
+        cout << "Cantidad impar de equipos. No se puede generar emparejamiento." << endl;
+        return;
+    }
 
-void Emparejamiento::setIdEquipo2(unsigned long long idEquipo2) 
-{
-    this->idEquipo2 = idEquipo2;
-}
+    cout << "Generando emparejamientos..." << endl;
 
-void Emparejamiento::setFecha(const std::string& fecha) 
-{
-    this->fecha = fecha;
-}
+    string fecha = "2026-01-01";      // puedes cambiarlo luego
+    string estado = "Pendiente";
 
-void Emparejamiento::setEstado(const std::string& estado) 
-{
-    this->estado = estado;
-}
+    for (size_t i = 0; i < equipos.size(); i += 2)
+    {
+        Partida p(
+            idTorneo,
+            equipos[i].getId(),
+            equipos[i + 1].getId(),
+            fecha,
+            estado
+        );
 
-unsigned long long Emparejamiento::getId() 
-{
-    return id;
-}
+        p.registrar();
 
-unsigned long long Emparejamiento::getIdTorneo() 
-{
-    return idTorneo;
-}
+        cout << "Partida creada: "
+             << equipos[i].getId() << " vs "
+             << equipos[i + 1].getId() << endl;
+    }
 
-unsigned long long Emparejamiento::getIdEquipo1() 
-{
-    return idEquipo1;
-}
-
-unsigned long long Emparejamiento::getIdEquipo2() 
-{
-    return idEquipo2;
-}
-
-string Emparejamiento::getFecha() 
-{
-    return fecha;
-}
-
-string Emparejamiento::getEstado() 
-{
-    return estado;
-}
-
-void Emparejamiento::registrar() 
-{
-    cout << "Registro de Emparejamiento" << endl;
-    cout << "Ingrese ID del Torneo: ";
-    cin >> idTorneo;
-    cout << "Ingrese ID del Equipo 1: ";
-    cin >> idEquipo1;
-    cout << "Ingrese ID del Equipo 2: ";
-    cin >> idEquipo2;
-    cout << "Ingrese Fecha (YYYY-MM-DD): ";
-    cin.ignore();
-    getline(cin, fecha);
-    cout << "Ingrese Estado: ";
-    getline(cin, estado);
-
-
-    Guardar g;
-    g.GuardarEmparejamiento(*this);
-    // Aquí podrías agregar código para guardar el emparejamiento en un archivo o base de datos
-
-    cout << "Emparejamiento registrado exitosamente." << endl;
-}
-
-void Emparejamiento::mostrar() 
-{
-    cout << "Datos del Emparejamiento" << endl;
-    cout << "ID: " << id << endl;
-    cout << "ID del Torneo: " << idTorneo << endl;
-    cout << "ID del Equipo 1: " << idEquipo1 << endl;
-    cout << "ID del Equipo 2: " << idEquipo2 << endl;
-    cout << "Fecha: " << fecha << endl;
-    cout << "Estado: " << estado << endl;
+    cout << "Emparejamiento generado correctamente." << endl;
 }

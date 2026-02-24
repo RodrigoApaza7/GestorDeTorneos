@@ -68,8 +68,8 @@ struct JuegoData
 struct TorneoData 
 {
     unsigned long long id;
+    unsigned long long idJuego;
     string nombre;
-    string juego;
     string fecha;
     string estado;
     string tipo;

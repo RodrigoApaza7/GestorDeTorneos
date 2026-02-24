@@ -29,7 +29,7 @@ public:
     void ConsultarRanking(unsigned long long id);
     void ConsultarSimulacion(unsigned long long id);
 
-    vector<Equipo> ConsultarEquiposPorTorneo(unsigned long long idTorneo);
+    vector<Equipo> ObtenerEquiposPorTorneo(unsigned long long idTorneo);
 };
 
 #endif // CONSULTAR_H
