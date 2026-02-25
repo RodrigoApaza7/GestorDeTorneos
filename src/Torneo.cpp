@@ -69,12 +69,6 @@ string Torneo::getEstado()
 
 void Torneo::registrar() 
 {
-    cout << "Registrando torneo..." << endl;
-    cout << "Ingrese el nombre del torneo: ";
-    cin >> nombreTorneo;
-    cout << "ingrese el id del juego del torneo (LOL, CS2, Dota, Valorant): ";
-    cin >> idJuego;
-    cout << "Ingrese la fecha del torneo (DD/MM/AAAA): ";
-    cin >> fecha;
-    cout << "Torneo registrado exitosamente." << endl;
+    Guardar g;
+    g.GuardarTorneo(*this);
 }

@@ -19,8 +19,7 @@ public:
     unsigned long long getIdPartida();
     int getGolesEquipo1();
     int getGolesEquipo2();
-    
-    void registrar();
+
     void mostrar();
 };
 

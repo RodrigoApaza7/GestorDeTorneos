@@ -10,7 +10,9 @@
 #include "Partida.h"
 #include "Juego.h"
 #include "consultar.h"
+#include "Sistema.h"
 #include <iostream>
+#include <string>
 using namespace std;
 
 Menu::Menu() : opcion(0) {}
@@ -27,10 +29,71 @@ void Menu::limpiarPanalla() {
     #endif
 } 
 
-void Menu::mostrarMenuTorneo() {
+void Menu::mostrarMenuPrincipal() 
+{
+    do
+    {
+        limpiarPanalla();
+        linea();
+        cout << "        GESTOR DE TORNEOS E-SPORTS       " << endl;
+        linea();
+        cout << "1. Menu Usuario" << endl;
+        cout << "2. Menu Jugador" << endl;
+        cout << "3. Menu Equipo" << endl;
+        cout << "4. Menu Torneo" << endl;
+        cout << "5. Menu Partida" << endl;
+        cout << "6. Menu Emparejamiento" << endl;
+        cout << "7. Simular Partida" << endl;
+        cout << "8. Menu Juego" << endl;
+        cout << "9. Salir" << endl;
+        linea();
+        cout << "Seleccione una opcion: ";
+        cin >> opcion;
 
-    Torneo t;
+        switch (opcion)
+        {
+            case 1:
+                mostrarMenuUsuario();
+                break;
+            case 2:
+                mostrarMenuJugador();
+                break;
+            case 3:
+                mostrarMenuEquipo();
+                break;
+            case 4:
+                mostrarMenuTorneo();
+                break;
+            case 5:
+                mostrarMenuPartida();
+                break;
+            case 6:
+                mostrarMenuEmparejamiento();
+                break;
+            case 7:
+                Sistema s;
+                unsigned long long idPartida;
 
+                cout << "Ingrese ID de la partida a simular: ";
+                cin >> idPartida;
+
+                s.SimularResultado(idPartida);
+                break;
+            case 8:
+                mostrarMenuJuego();
+                break;
+            case 9:
+                cout << "Saliendo del programa..." << endl;
+                break;
+            default:
+                cout << "Opcion no valida." << endl;
+        }
+
+    } while (opcion != 9);
+}
+
+void Menu::mostrarMenuTorneo()
+{
     do
     {
         limpiarPanalla();
@@ -39,42 +102,59 @@ void Menu::mostrarMenuTorneo() {
         linea();
         cout << "1. Nuevo torneo" << endl;
         cout << "2. Consultar torneo" << endl;
-        cout << "3. Volver al Menu Principal" << endl;
+        cout << "3. Volver" << endl;
         linea();
         cout << "Seleccione una opcion: ";
         cin >> opcion;
 
-        if(opcion == 1) 
+        if(opcion == 1)
         {
+            unsigned long long idJuego;
+            string nombre, fecha, estado, tipo;
+
+            cout << "Ingrese ID del Juego: ";
+            cin >> idJuego;
+
+            cout << "Ingrese Nombre del Torneo: ";
+            cin.ignore();
+            getline(cin, nombre);
+
+            cout << "Ingrese Fecha Inicio: ";
+            getline(cin, fecha);
+
+            cout << "Ingrese Estado: ";
+            getline(cin, estado);
+
+            cout << "Ingrese Tipo: ";
+            getline(cin, tipo);
+
+            Torneo t(idJuego, nombre, fecha, estado, tipo);
             t.registrar();
-        } 
-        else if(opcion == 2) 
+        }
+        else if(opcion == 2)
         {
             Consultar c;
             unsigned long long id;
-            cout << "Ingrese el ID del torneo a consultar: ";
+
+            cout << "Ingrese ID del torneo: ";
             cin >> id;
+
             c.ConsultarTorneo(id);
-        } 
-        else if(opcion == 3) 
+        }
+        else if(opcion == 3)
         {
-            mostrarMenuPrincipal();
+            break;
         }
         else
         {
-            cout << "Opcion no valida. Intente de nuevo." << endl;
+            cout << "Opcion no valida." << endl;
         }
 
-    } while (opcion != 3);
-
+    } while(opcion != 3);
 }
 
-
-
-void Menu::mostrarMenuUsuario() {
-
-    Usuario user;
-
+void Menu::mostrarMenuUsuario()
+{
     do
     {
         limpiarPanalla();
@@ -83,46 +163,57 @@ void Menu::mostrarMenuUsuario() {
         linea();
         cout << "1. Registrar Usuario" << endl;
         cout << "2. Login Usuario" << endl;
-        cout << "3. Volver al Menu Principal" << endl;
+        cout << "3. Volver" << endl;
         linea();
         cout << "Seleccione una opcion: ";
         cin >> opcion;
 
-        if(opcion == 1) 
+        if(opcion == 1)
         {
-            user.Registrar();
-        } 
-        else if(opcion == 2) 
-        {
-            string u, p;
-            cout << "Ingrese el nombre de usuario: ";
-            cin >> u;
-            cout << "Ingrese la contrasena: ";
-            cin >> p;
-            if(user.login(u, p)) {
-                cout << "Login exitoso!" << endl;
-            } else {
-                cout << "Login fallido. Usuario o contrasena incorrectos." << endl;
-            }
-        } 
-        else if(opcion == 3) 
-        {
-            mostrarMenuPrincipal();
+            string username, password;
+
+            cout << "Ingrese Usuario: ";
+            cin.ignore();
+            getline(cin, username);
+
+            cout << "Ingrese Password: ";
+            getline(cin, password);
+
+            string rol = "Usuario"; // por defecto
+
+            Usuario u(username, password, rol);
+            u.Registrar();
         }
-        else 
+        else if(opcion == 2)
         {
-            cout << "Opcion no valida. Intente de nuevo." << endl;
+            string username, password;
+
+            cout << "Ingrese Usuario: ";
+            cin.ignore();
+            getline(cin, username);
+
+            cout << "Ingrese Password: ";
+            getline(cin, password);
+
+            string rol = "Usuario"; // por defecto
+
+            Usuario u(username, password, rol);
+            u.Registrar();
+        }
+        else if(opcion == 3)
+        {
+            break;
+        }
+        else
+        {
+            cout << "Opcion no valida." << endl;
         }
 
-    } while (opcion != 1 && opcion != 2 && opcion != 3);
+    } while(opcion != 3);
 }
 
-void Menu::mostrarMenuJugador() 
+void Menu::mostrarMenuJugador()
 {
-
-
-    Jugador j;
-
     do
     {
         limpiarPanalla();
@@ -130,40 +221,54 @@ void Menu::mostrarMenuJugador()
         cout << "           MENU JUGADOR          " << endl;
         linea();
         cout << "1. Registrar Jugador" << endl;
-        cout << "2. Mostrar Jugador" << endl;
-        cout << "3. Volver al Menu Principal" << endl;
+        cout << "2. Consultar Jugador" << endl;
+        cout << "3. Volver" << endl;
         linea();
         cout << "Seleccione una opcion: ";
         cin >> opcion;
 
-        if(opcion == 1) 
+        if(opcion == 1)
         {
+            string nombre, nickname;
+            int edad;
+
+            cout << "Ingrese Nombre: ";
+            cin.ignore();
+            getline(cin, nombre);
+
+            cout << "Ingrese Nickname: ";
+            getline(cin, nickname);
+
+            cout << "Ingrese Edad: ";
+            cin >> edad;
+
+            Jugador j(nombre, nickname, edad);
             j.registrar();
-        } 
-        else if(opcion == 2) 
+        }
+        else if(opcion == 2)
         {
             Consultar c;
             unsigned long long id;
-            cout << "Ingrese el ID del jugador a consultar: ";
+
+            cout << "Ingrese ID del jugador: ";
             cin >> id;
+
             c.ConsultarJugador(id);
-        } 
-        else if(opcion == 3) 
-        {
-            mostrarMenuPrincipal();
         }
-        else 
+        else if(opcion == 3)
         {
-            cout << "Opcion no valida. Intente de nuevo." << endl;
+            break;
+        }
+        else
+        {
+            cout << "Opcion no valida." << endl;
         }
 
-    } while (opcion != 1 && opcion != 2 && opcion != 3);
+    } while(opcion != 3);
 }
 
-void Menu::mostrarMenuPartida() {
-
-    Partida p;
-
+void Menu::mostrarMenuPartida()
+{
     do
     {
         limpiarPanalla();
@@ -177,23 +282,220 @@ void Menu::mostrarMenuPartida() {
         cout << "Seleccione una opcion: ";
         cin >> opcion;
 
-        if(opcion == 1) 
+        if(opcion == 1)
         {
+            unsigned long long idTorneo, idEq1, idEq2;
+            string fecha, estado;
+
+            cout << "Ingrese ID Torneo: ";
+            cin >> idTorneo;
+
+            cout << "Ingrese ID Equipo 1: ";
+            cin >> idEq1;
+
+            cout << "Ingrese ID Equipo 2: ";
+            cin >> idEq2;
+
+            cout << "Ingrese Fecha: ";
+            cin.ignore();
+            getline(cin, fecha);
+
+            estado = "Pendiente";
+
+            Partida p(idTorneo, idEq1, idEq2, fecha, estado);
             p.registrar();
-            
-        } 
-        else if(opcion == 2) 
-        {
-            p.mostrar();
-        } 
-        else if(opcion == 3) 
-        {
-            mostrarMenuPrincipal();
         }
-        else 
+        else if(opcion == 2)
         {
-            cout << "Opcion no valida. Intente de nuevo." << endl;
+            Consultar c;
+            unsigned long long id;
+
+            cout << "Ingrese ID de la partida: ";
+            cin >> id;
+
+            c.ConsultarPartida(id);
+        }
+        else if(opcion == 3)
+        {
+            break;
+        }
+        else
+        {
+            cout << "Opcion no valida." << endl;
         }
 
-    } while (opcion != 1 && opcion != 2 && opcion != 3);
+    } while (opcion != 3);
+}
+
+void Menu::mostrarMenuEquipo()
+{
+    do
+    {
+        limpiarPanalla();
+        linea();
+        cout << "           MENU EQUIPO          " << endl;
+        linea();
+        cout << "1. Registrar Equipo" << endl;
+        cout << "2. Consultar Equipo" << endl;
+        cout << "3. Volver al Menu Principal" << endl;
+        linea();
+        cout << "Seleccione una opcion: ";
+        cin >> opcion;
+
+        if(opcion == 1)
+        {
+            unsigned long long idTorneo;
+
+            cout << "Ingrese ID del torneo al que pertenece el equipo: ";
+            cin >> idTorneo;
+
+            Equipo e(idTorneo);
+            e.registrar();
+        }
+        else if(opcion == 2)
+        {
+            Consultar c;
+            unsigned long long id;
+
+            cout << "Ingrese ID del equipo: ";
+            cin >> id;
+
+            c.ConsultarEquipo(id);
+        }
+        else if(opcion == 3)
+        {
+            break;
+        }
+        else
+        {
+            cout << "Opcion no valida." << endl;
+        }
+
+    } while (opcion != 3);
+}
+
+void Menu::mostrarMenuEmparejamiento()
+{
+    do
+    {
+        limpiarPanalla();
+        linea();
+        cout << "           MENU EMPAREJAMIENTO          " << endl;
+        linea();
+        cout << "1. Generar Emparejamiento" << endl;
+        cout << "2. Volver al Menu Principal" << endl;
+        linea();
+        cout << "Seleccione una opcion: ";
+        cin >> opcion;
+
+        if(opcion == 1)
+        {
+            unsigned long long idTorneo;
+
+            cout << "Ingrese ID del torneo para generar emparejamiento: ";
+            cin >> idTorneo;
+
+            Emparejamiento e;
+            e.GenerarEmparejamiento(idTorneo);
+        }
+        else if(opcion == 2)
+        {
+            break;
+        }
+        else
+        {
+            cout << "Opcion no valida." << endl;
+        }
+
+    } while (opcion != 2);
+}
+
+void Menu::mostrarMenuSimularPartida()
+{
+    do
+    {
+        limpiarPanalla();
+        linea();
+        cout << "           MENU SIMULAR PARTIDA          " << endl;
+        linea();
+        cout << "1. Simular Partida" << endl;
+        cout << "2. Volver al Menu Principal" << endl;
+        linea();
+        cout << "Seleccione una opcion: ";
+        cin >> opcion;
+
+        if(opcion == 1)
+        {
+            unsigned long long idPartida;
+
+            cout << "Ingrese ID de la partida a simular: ";
+            cin >> idPartida;
+
+            Sistema s;
+            s.SimularResultado(idPartida);
+        }
+        else if(opcion == 2)
+        {
+            break;
+        }
+        else
+        {
+            cout << "Opcion no valida." << endl;
+        }
+
+    } while (opcion != 2);
+}
+
+void Menu::mostrarMenuJuego()
+{
+    do
+    {
+        limpiarPanalla();
+        linea();
+        cout << "           MENU JUEGO          " << endl;
+        linea();
+        cout << "1. Registrar Juego" << endl;
+        cout << "2. Consultar Juego" << endl;
+        cout << "3. Volver al Menu Principal" << endl;
+        linea();
+        cout << "Seleccione una opcion: ";
+        cin >> opcion;
+
+        if(opcion == 1)
+        {
+            string nombre, genero, plataforma;
+
+            cout << "Ingrese Nombre del Juego: ";
+            cin.ignore();
+            getline(cin, nombre);
+
+            cout << "Ingrese Genero del Juego: ";
+            getline(cin, genero);
+
+            cout << "Ingrese Plataforma del Juego: ";
+            getline(cin, plataforma);
+
+            Juego j(nombre, genero, plataforma);
+            j.registrar();
+        }
+        else if(opcion == 2)
+        {
+            Consultar c;
+            unsigned long long id;
+
+            cout << "Ingrese ID del juego: ";
+            cin >> id;
+
+            c.ConsultarJuego(id);
+        }
+        else if(opcion == 3)
+        {
+            break;
+        }
+        else
+        {
+            cout << "Opcion no valida." << endl;
+        }
+
+    } while (opcion != 3);
 }

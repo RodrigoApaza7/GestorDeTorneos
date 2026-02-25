@@ -57,14 +57,6 @@ int SimularPartida::getGolesEquipo2()
     return golesEquipo2;
 }
 
-void SimularPartida::registrar() 
-{
-    
-
-    Guardar g;
-    g.GuardarSimularPartida(*this);
-}
-
 void SimularPartida::mostrar() 
 {
     cout << "Simulación de Partida" << endl;

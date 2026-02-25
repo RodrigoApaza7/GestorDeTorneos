@@ -20,11 +20,16 @@ public:
 
     void setIdEquipo1(unsigned long long idEq1);
     void setIdEquipo2(unsigned long long idEq2);
+    void setFecha(const string& fecha);
+    void setEstado(const string& estado);
+    void setIdTorneo(unsigned long long idTorneo);
 
     unsigned long long getId() const;
     unsigned long long getIdTorneo() const;
     unsigned long long getIdEquipo1() const;
     unsigned long long getIdEquipo2() const;
+    string getFecha() const;
+    string getEstado() const;
     int getResultadoEquipo1() const;
     int getResultadoEquipo2() const;
 

@@ -20,8 +20,8 @@ using namespace std;
 struct JugadorData 
 {
     unsigned long long id;
-    string nombre;
-    string nickname;
+    char nombre[100];
+    char nickname[50];
     int edad;
 };
 
@@ -37,16 +37,16 @@ struct PartidaData
     unsigned long long idTorneo;
     unsigned long long idEquipo1;
     unsigned long long idEquipo2;
-    string fecha;
-    string estado;
+    char fecha[20];
+    char estado[20];
 };
 
 struct UsuarioData 
 {
     unsigned long long id;
-    string nombre;
-    string contraseña;
-    string rol;
+    char nombre[100];
+    char contraseña[100];
+    char rol[20];
 };
 
 struct DetalleEquipoData 
@@ -54,25 +54,25 @@ struct DetalleEquipoData
     unsigned long long id;
     unsigned long long idEquipo;
     vector<unsigned long long> idJugadores;
-    string nombre;
+    char nombre[100];
 };
 
 struct JuegoData 
 {
     unsigned long long id;
-    string nombre;
-    string genero;
-    string plataforma;
+    char nombre[100];
+    char genero[50];
+    char plataforma[50];
 };
 
 struct TorneoData 
 {
     unsigned long long id;
     unsigned long long idJuego;
-    string nombre;
-    string fecha;
-    string estado;
-    string tipo;
+    char nombre[100];
+    char fecha[20];
+    char estado[20];
+    char tipo[20];
 };
 
 struct RankingData 
@@ -90,8 +90,8 @@ struct EmparejamientoData
     unsigned long long idTorneo;
     unsigned long long idEquipo1;
     unsigned long long idEquipo2;
-    string fecha;
-    string estado;
+    char fecha[20];
+    char estado[20];
 };
 
 struct SimularPartidaData 

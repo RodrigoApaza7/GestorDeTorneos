@@ -36,12 +36,6 @@ unsigned long long Equipo::getId()
 
 void Equipo::registrar() 
 {
-    cout << "Registro de Equipo" << endl;
-    cout << "Ingrese ID del equipo: ";
-    cin >> id;
-    cout << "Ingrese ID del torneo al que pertenece el equipo: ";
-    cin >> idTorneo;
-
     Guardar g;
     g.GuardarEquipo(*this);
 }

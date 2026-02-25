@@ -18,8 +18,8 @@ void Consultar::ConsultarJugador(unsigned long long id)
     {
         Jugador j(
             data.id,
-            data.nombre,
-            data.nickname,
+            string(data.nombre),
+            string(data.nickname),
             data.edad
         );
 
@@ -83,8 +83,8 @@ void Consultar::ConsultarPartida(unsigned long long id)
             data.idTorneo,
             data.idEquipo1,
             data.idEquipo2,
-            data.fecha,
-            data.estado
+            string(data.fecha),
+            string(data.estado)
         );
 
         if(p.getId() == id) 
@@ -114,9 +114,9 @@ void Consultar::ConsultarUsuario(unsigned long long id)
     {
         Usuario u(
             data.id,
-            data.nombre,
-            data.contraseña,
-            data.rol
+            string(data.nombre),
+            string(data.contraseña),
+            string(data.rol)
         );
 
         if(u.getId() == id) 
@@ -148,7 +148,7 @@ void Consultar::ConsultarDetalleEquipo(unsigned long long id)
             data.id,
             data.idEquipo,
             data.idJugadores,
-            data.nombre
+            string(data.nombre)
         );
 
         if(de.getId() == id) 
@@ -178,9 +178,9 @@ void Consultar::ConsultarJuego(unsigned long long id)
     {
         Juego j(
             data.id,
-            data.nombre,
-            data.genero,
-            data.plataforma
+            string(data.nombre),
+            string(data.genero),
+            string(data.plataforma)
         );
 
         if(j.getId() == id) 
@@ -211,10 +211,10 @@ void Consultar::ConsultarTorneo(unsigned long long id)
         Torneo t(
             data.id,
             data.idJuego,
-            data.nombre,
-            data.fecha,
-            data.estado,
-            data.tipo
+            string(data.nombre),
+            string(data.fecha),
+            string(data.estado),
+            string(data.tipo)
         );
 
         if(t.getId() == id) 
@@ -322,4 +322,37 @@ vector<Equipo> Consultar::ObtenerEquiposPorTorneo(unsigned long long idTorneo)
     fclose(archivo);
 
     return equiposTorneo;
+}
+
+Partida Consultar::ObtenerPartidaPorId(unsigned long long idPartida)
+{
+    FILE* archivo = fopen("partidas.bin", "rb");
+
+    if (archivo == NULL)
+    {
+        throw runtime_error("No hay partidas registradas.");
+    }
+
+    PartidaData data;
+
+    while (fread(&data, sizeof(PartidaData), 1, archivo))
+    {
+        if (data.id == idPartida)
+        {
+            Partida p(
+                data.id,
+                data.idTorneo,
+                data.idEquipo1,
+                data.idEquipo2,
+                string(data.fecha),
+                string(data.estado)
+            );
+
+            fclose(archivo);
+            return p;
+        }
+    }
+
+    fclose(archivo);
+    throw runtime_error("Partida no encontrada.");
 }

@@ -40,15 +40,6 @@ int Jugador::getEdad() const {
 
 void Jugador::registrar() 
 {
-    cout << "Registro de Jugador" << endl;
-    cout << "Ingrese Nombre: ";
-    cin.ignore();
-    getline(cin, nombre);
-    cout << "Ingrese Nickname: ";
-    getline(cin, nickname);
-    cout << "Ingrese Edad: ";
-    cin >> edad;
-
     Guardar g;
     g.GuardarJugador(*this);
 

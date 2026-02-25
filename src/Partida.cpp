@@ -33,6 +33,18 @@ void Partida::setIdEquipo2(unsigned long long idEq2) {
     idEquipo2 = idEq2;
 }
 
+void Partida::setFecha(const string& fecha) {
+    this->fecha = fecha;
+}
+
+void Partida::setEstado(const string& estado) {
+    this->estado = estado;
+}
+
+void Partida::setIdTorneo(unsigned long long idTorneo) {
+    this->idTorneo = idTorneo;
+}
+
 unsigned long long Partida::getId() const {
     return id;
 }
@@ -49,6 +61,14 @@ unsigned long long Partida::getIdEquipo2() const {
     return idEquipo2;
 }
 
+string Partida::getFecha() const {
+    return fecha;
+}
+
+string Partida::getEstado() const {
+    return estado;
+}
+
 int Partida::getResultadoEquipo1() const {
     // Aquí deberías implementar la lógica para obtener el resultado del Equipo 1
     return 0; // Placeholder
@@ -61,14 +81,6 @@ int Partida::getResultadoEquipo2() const {
 
 void Partida::registrar() 
 {
-    cout << "Registro de Partida" << endl;
-    cout << "Ingrese ID: ";
-    cin >> id;
-    cout << "Ingrese ID del Equipo 1: ";
-    cin >> idEquipo1;
-    cout << "Ingrese ID del Equipo 2: ";
-    cin >> idEquipo2;
-
     Guardar g;
     g.GuardarPartida(*this);
 }

@@ -60,15 +60,6 @@ string Juego::getplataforma() const
 
 void Juego::registrar() 
 {
-    cout << "Registro de Juego" << endl;
-    cout << "Ingrese Nombre: ";
-    cin.ignore();
-    getline(cin, nombre);
-    cout << "Ingrese Genero: ";
-    getline(cin, genero);
-    cout << "Ingrese Plataforma: ";
-    getline(cin, plataforma);
-
     Guardar g;
     g.GuardarJuego(*this);
 

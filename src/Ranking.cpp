@@ -71,16 +71,6 @@ int Ranking::getPuntos()
 
 void Ranking::registrar() 
 {
-    cout << "Registro de Ranking" << endl;
-    cout << "Ingrese ID del Torneo: ";
-    cin >> idTorneo;
-    cout << "Ingrese ID del Equipo: ";
-    cin >> idEquipo;
-    cout << "Ingrese Posición: ";
-    cin >> posicion;
-    cout << "Ingrese Puntos: ";
-    cin >> puntos;
-
     Guardar g;
     g.GuardarRanking(*this);
 

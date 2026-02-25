@@ -22,10 +22,12 @@ public:
     void GuardarUsuario(Usuario u);
     void GuardarTorneo(Torneo t);
     void GuardarRanking(Ranking r);
-    void GuardarEmparejamiento(Emparejamiento e);
     void GuardarSimularPartida(SimularPartida s);
     void GuardarDetalleEquipo(DetalleEquipo d);
     void GuardarJuego(Juego j);
+
+    void ActualizarPartida(Partida p);
+
 };
 
 #endif // GUARDAR_H
