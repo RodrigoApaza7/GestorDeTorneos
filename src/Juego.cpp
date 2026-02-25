@@ -10,10 +10,14 @@ using namespace std;
 
 Juego::Juego(const string& nombre, const string& genero, const string& plataforma)  
 {
+    IdGenerador idGen;
+
     id = IdGenerador::generarId(TipoObjeto::Juego);
     this->nombre = nombre;
     this->genero = genero;
     this->plataforma = plataforma;
+
+    idGen.guardarContadores();
 }
 
 Juego::Juego(unsigned long long id, const string& nombre, const string& genero, const string& plataforma) 

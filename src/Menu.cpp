@@ -130,6 +130,8 @@ void Menu::mostrarMenuTorneo()
 
             Torneo t(idJuego, nombre, fecha, estado, tipo);
             t.registrar();
+            cout << "Torneo registrado con ID: " << t.getId() << endl;
+            system("pause");
         }
         else if(opcion == 2)
         {
@@ -140,6 +142,7 @@ void Menu::mostrarMenuTorneo()
             cin >> id;
 
             c.ConsultarTorneo(id);
+            system("pause");
         }
         else if(opcion == 3)
         {
@@ -183,6 +186,8 @@ void Menu::mostrarMenuUsuario()
 
             Usuario u(username, password, rol);
             u.Registrar();
+            cout << "Usuario registrado con ID: " << u.getId() << endl;
+            system("pause");
         }
         else if(opcion == 2)
         {
@@ -244,6 +249,8 @@ void Menu::mostrarMenuJugador()
 
             Jugador j(nombre, nickname, edad);
             j.registrar();
+            cout << "Jugador registrado con ID: " << j.getId() << endl;
+            system("pause");
         }
         else if(opcion == 2)
         {
@@ -254,6 +261,7 @@ void Menu::mostrarMenuJugador()
             cin >> id;
 
             c.ConsultarJugador(id);
+            system("pause");
         }
         else if(opcion == 3)
         {
@@ -304,6 +312,8 @@ void Menu::mostrarMenuPartida()
 
             Partida p(idTorneo, idEq1, idEq2, fecha, estado);
             p.registrar();
+            cout << "Partida registrada con ID: " << p.getId() << endl;
+            system("pause");
         }
         else if(opcion == 2)
         {
@@ -314,6 +324,7 @@ void Menu::mostrarMenuPartida()
             cin >> id;
 
             c.ConsultarPartida(id);
+            system("pause");
         }
         else if(opcion == 3)
         {
@@ -351,6 +362,8 @@ void Menu::mostrarMenuEquipo()
 
             Equipo e(idTorneo);
             e.registrar();
+            cout << "Equipo registrado con ID: " << e.getId() << endl;
+            system("pause");
         }
         else if(opcion == 2)
         {
@@ -361,6 +374,7 @@ void Menu::mostrarMenuEquipo()
             cin >> id;
 
             c.ConsultarEquipo(id);
+            system("pause");
         }
         else if(opcion == 3)
         {
@@ -397,6 +411,8 @@ void Menu::mostrarMenuEmparejamiento()
 
             Emparejamiento e;
             e.GenerarEmparejamiento(idTorneo);
+            cout << "Emparejamiento generado exitosamente." << endl;
+            system("pause");
         }
         else if(opcion == 2)
         {
@@ -433,6 +449,8 @@ void Menu::mostrarMenuSimularPartida()
 
             Sistema s;
             s.SimularResultado(idPartida);
+            cout << "Simulación realizada exitosamente." << endl;
+            system("pause");
         }
         else if(opcion == 2)
         {
@@ -477,6 +495,8 @@ void Menu::mostrarMenuJuego()
 
             Juego j(nombre, genero, plataforma);
             j.registrar();
+            cout << "Juego registrado con ID: " << j.getId() << endl;
+            
         }
         else if(opcion == 2)
         {
@@ -487,6 +507,7 @@ void Menu::mostrarMenuJuego()
             cin >> id;
 
             c.ConsultarJuego(id);
+            system("pause");
         }
         else if(opcion == 3)
         {

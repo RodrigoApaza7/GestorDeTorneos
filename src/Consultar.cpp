@@ -185,9 +185,8 @@ void Consultar::ConsultarJuego(unsigned long long id)
 
         if(j.getId() == id) 
         {
-            cout << "Jugador encontrado:" << endl;
+            cout << "Juego encontrado:" << endl;
             j.mostrar();
-            break;
         }
     }
 
