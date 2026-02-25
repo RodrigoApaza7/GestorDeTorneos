@@ -1,6 +1,6 @@
 #include "Guardar.h"
 #include <stdio.h>
-#include <string>
+#include <cstring>
 #include <vector>
 #include <iostream>
 using namespace std;
@@ -81,11 +81,11 @@ void Guardar::GuardarUsuario(Usuario u)
     data.id = u.getId();
 
     memset(data.nombre, '\0', sizeof(data.nombre));
-    memset(data.contraseña, '\0', sizeof(data.contraseña));
+    memset(data.contrasenia, '\0', sizeof(data.contrasenia));
     memset(data.rol, '\0', sizeof(data.rol));
 
     strncpy(data.nombre, u.getUsername().c_str(), sizeof(data.nombre) - 1);
-    strncpy(data.contraseña, u.getPassword().c_str(), sizeof(data.contraseña) - 1);
+    strncpy(data.contrasenia, u.getPassword().c_str(), sizeof(data.contrasenia) - 1);
     strncpy(data.rol, u.getRol().c_str(), sizeof(data.rol) - 1);
 
     fwrite(&data, sizeof(UsuarioData), 1, archivo);

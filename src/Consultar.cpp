@@ -115,7 +115,7 @@ void Consultar::ConsultarUsuario(unsigned long long id)
         Usuario u(
             data.id,
             string(data.nombre),
-            string(data.contraseña),
+            string(data.contrasenia),
             string(data.rol)
         );
 

@@ -45,7 +45,7 @@ struct UsuarioData
 {
     unsigned long long id;
     char nombre[100];
-    char contraseña[100];
+    char contrasenia[100];
     char rol[20];
 };
 
