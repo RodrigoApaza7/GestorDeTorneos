@@ -23,9 +23,9 @@ public:
     void setnombre(const std::string& nombre);
 
     unsigned long long getId() const;
-    unsigned long long getidEquipo();
-    string getnombre();
-    vector<unsigned long long> getidJugadores();
+    unsigned long long getIdEquipo();
+    string getNombre();
+    vector<unsigned long long> getIdJugadores();
 
     void registrar();
     void mostrar();

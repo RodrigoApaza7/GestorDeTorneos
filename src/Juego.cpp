@@ -24,17 +24,17 @@ Juego::Juego(unsigned long long id, const string& nombre, const string& genero, 
     this->plataforma = plataforma;
 }
 
-void Juego::setnombre(const string& nombre) 
+void Juego::setNombre(const string& nombre) 
 {
     this->nombre = nombre;
 }
 
-void Juego::setgenero(const string& genero) 
+void Juego::setGenero(const string& genero) 
 {
     this->genero = genero;
 }
 
-void Juego::setplataforma(const string& plataforma) 
+void Juego::setPlataforma(const string& plataforma) 
 {
     this->plataforma = plataforma;
 }
@@ -43,17 +43,17 @@ unsigned long long Juego::getId() const {
     return id;
 }
 
-string Juego::getnombre() const 
+string Juego::getNombre() const 
 {
     return nombre;
 }
 
-string Juego::getgenero() const 
+string Juego::getGenero() const 
 {
     return genero;
 }
 
-string Juego::getplataforma() const 
+string Juego::getPlataforma() const 
 {
     return plataforma;
 }

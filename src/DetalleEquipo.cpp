@@ -41,17 +41,17 @@ unsigned long long DetalleEquipo::getId() const
     return id;
 }
 
-unsigned long long DetalleEquipo::getidEquipo() 
+unsigned long long DetalleEquipo::getIdEquipo() 
 {
     return idEquipo;
 }
 
-string DetalleEquipo::getnombre() 
+string DetalleEquipo::getNombre() 
 {
     return nombre;
 }
 
-vector<unsigned long long> DetalleEquipo::getidJugadores() 
+vector<unsigned long long> DetalleEquipo::getIdJugadores() 
 {
     return idJugadores;
 }

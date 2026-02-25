@@ -67,8 +67,23 @@ string Torneo::getEstado()
     return estado;
 }
 
+string Torneo::getTipo() 
+{
+    return tipo;
+}
+
 void Torneo::registrar() 
 {
     Guardar g;
     g.GuardarTorneo(*this);
+}
+
+void Torneo::mostrar() 
+{
+    cout << "ID: " << id << endl;
+    cout << "ID Juego: " << idJuego << endl;
+    cout << "Nombre del Torneo: " << nombreTorneo << endl;
+    cout << "Fecha: " << fecha << endl;
+    cout << "Estado: " << estado << endl;
+    cout << "Tipo: " << tipo << endl;
 }

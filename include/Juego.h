@@ -16,14 +16,14 @@ public:
     Juego(const string& nombre, const string& genero, const string& plataforma);
     Juego(unsigned long long id, const string& nombre, const string& genero, const string& plataforma);
     
-    void setnombre(const string& nombre);
-    void setgenero(const string& genero);
-    void setplataforma(const string& plataforma);
+    void setNombre(const string& nombre);
+    void setGenero(const string& genero);
+    void setPlataforma(const string& plataforma);
 
     unsigned long long getId() const;
-    string getnombre() const;
-    string getgenero() const;
-    string getplataforma() const;
+    string getNombre() const;
+    string getGenero() const;
+    string getPlataforma() const;
 
     void registrar();
     void mostrar();

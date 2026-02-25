@@ -76,3 +76,12 @@ void Ranking::registrar()
 
     cout << "Datos registrados exitosamente." << endl;
 }
+
+void Ranking::mostrar() 
+{
+    cout << "ID: " << id << endl;
+    cout << "ID Torneo: " << idTorneo << endl;
+    cout << "ID Equipo: " << idEquipo << endl;
+    cout << "Posición: " << posicion << endl;
+    cout << "Puntos: " << puntos << endl;
+}

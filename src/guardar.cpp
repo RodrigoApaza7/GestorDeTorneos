@@ -146,6 +146,43 @@ void Guardar::GuardarSimularPartida(SimularPartida s)
     fclose(archivo); // cerrar archivo
 }
 
+void Guardar::GuardarDetalleEquipo(DetalleEquipo d) 
+{
+    FILE* archivo;
+    archivo = fopen("detalles.bin", "ab"); // abrir archivo
+    DetalleEquipoData data;
+
+    data.id = d.getId();
+    data.idEquipo = d.getIdEquipo();
+    data.idJugadores = d.getIdJugadores();
+    data.idJugadores = d.getIdJugadores();
+    memset(data.nombre, '\0', sizeof(data.nombre));
+    strncpy(data.nombre, d.getNombre().c_str(), sizeof(data.nombre) - 1);
+
+    fwrite(&data, sizeof(DetalleEquipoData), 1, archivo);
+    fclose(archivo); // cerrar archivo
+}
+
+void Guardar::GuardarJuego(Juego j) 
+{
+    FILE* archivo;
+    archivo = fopen("juegos.bin", "ab"); // abrir archivo
+    JuegoData data;
+
+    data.id = j.getId();
+
+    memset(data.nombre, '\0', sizeof(data.nombre));
+    memset(data.genero, '\0', sizeof(data.genero));
+    memset(data.plataforma, '\0', sizeof(data.plataforma));
+
+    strncpy(data.nombre, j.getNombre().c_str(), sizeof(data.nombre) - 1);
+    strncpy(data.genero, j.getGenero().c_str(), sizeof(data.genero) - 1);
+    strncpy(data.plataforma, j.getPlataforma().c_str(), sizeof(data.plataforma) - 1);
+
+    fwrite(&data, sizeof(JuegoData), 1, archivo);
+    fclose(archivo); // cerrar archivo
+}
+
 void Guardar::ActualizarPartida(Partida p)
 {
     FILE* archivo = fopen("partidas.bin", "rb+");
